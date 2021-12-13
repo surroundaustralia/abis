@@ -451,10 +451,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_namespaces">2.4. Namespaces</a></li>
 </ul>
 </li>
-<li><a href="#_introduction">3. Introduction</a></li>
-<li><a href="#_profiles_vocabulay_overview">4. Profiles Vocabulay overview</a></li>
-<li><a href="#_parts_of_the_ndes_standard">5. Parts of the NDES Standard</a></li>
-<li><a href="#_references">6. References</a></li>
+<li><a href="#_introduction">3. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_profiles_vocabulary_overview">3.1. Profiles Vocabulary overview</a></li>
+</ul>
+</li>
+<li><a href="#_parts_of_the_ndes_standard">4. Parts of the NDES Standard</a></li>
+<li><a href="#_references">5. References</a></li>
 </ul>
 </div>
 </div>
@@ -494,7 +497,7 @@ DRAFT, incomplete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This document decribes the structure and multiple parts of the NDES Stanard as well as the formalisms used in part desription.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
@@ -505,8 +508,12 @@ DRAFT, incomplete
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-12-13</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dawe">SURROUND Australia Pty Ltd</a>(<a href="https://linked.data.gov.au/org/surround" class="bare">https://linked.data.gov.au/org/surround</a>), <a href="https://www.gaiaresources.com.au/">Gaia Resources</a> and the [Department of Agriculture, Water and the Environment]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/surround">SURROUND Australia Pty Ltd</a>, <a href="https://www.gaiaresources.com.au/">Gaia Resources</a> and the <a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
@@ -525,7 +532,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 </table>
 <div id="img-rdf" class="imageblock text-center">
 <div class="content">
-<img src="https://surroundaustralia.github.io/ndes/img/standard-overview.png" alt="NDES Standard Overview" width="600" height="400">
+<img src="https://surroundaustralia.github.io/ndes//img/standard-overview.png" alt="NDES Standard Overview" width="600" height="400">
 </div>
 <div class="title">Figure 1. Overview of the NDES Standard and it&#8217;s parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.</div>
 </div>
@@ -665,21 +672,90 @@ The document that describes the business rules and other requirements that this 
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_profiles_vocabulay_overview">4. Profiles Vocabulay overview</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_profiles_vocabulary_overview">3.1. Profiles Vocabulary overview</h3>
 <div class="paragraph">
-<p>The <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a> is a <a href="https://www.w3.org:">World Wide Web Consortium</a> standard for the formal (machine-readable, mathematically-based) description of Standards, their parts, and how they relate to other Standards.</p>
+<p>The <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a> is a <a href="https://www.w3.org:">World Wide Web Consortium</a> standard for the formal (machine-readable, logical data) description of Standards, their parts, and how they relate to other Standards.</p>
 </div>
 <div class="paragraph">
 <p>The use of the word 'profile' here is due to the way Standards reuse other Standards: if one extends another and remains faithful to its rules, it can be said to <em>profile</em> it.</p>
 </div>
+<div class="paragraph">
+<p>Standards described using PROF:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>define a conceptual <em>profile</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>this is the overarching standard thing and is independent of any of the particular resources within the standard</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>describe multiple <em>resources</em> within the Standard</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>each part of a Stanard is described using roles, formats, online or other locations and other metadata</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>indicate what they are profiles of</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>if a PROF-defined Standard profiles another Standard, perhaps a generic standard for data or a broad information domain, this is indicated in a formal way</p>
+</li>
+<li>
+<p>data that conforms to a PROF stnadard must conform to all the other Standards that this Standard profiles</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The formal declaration of this Standard as a conceptual <em>profile</em> is given here in with details in the Section <a href="#_metadata">Metadata</a> and this document&#8217;s resource description in the following section.</p>
+</div>
+<div class="paragraph">
+<p>The machein-redable form of this Standard&#8217;s conceptual <em>profile</em> declaration is provided in the RDF <a href="https://surroundaustralia.github.io/ndes/profile.ttl">profile.ttl</a> resource and reproduced here for convenience:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix prof: &lt;http://www.w3.org/ns/dx/prof/&gt; .
+
+
+&lt;https://linked.data.gov.au/def/ndesbd&gt;
+    a prof:Profile , dcterms:Standard ;
+    dcterms:title "NDES Standard Definition" ;
+    dcterms:description "This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions, in machine-readable form." ;
+    dcterms:created "2021-12-13"^^xsd:date ;
+    dcterms:modified "2021-12-13"^^xsd:date ;
+    # dcterms:issued "0000-00-00"^^xsd:date ;
+    dcterms:creator
+        &lt;https://linked.data.gov.au/org/surround&gt; ,
+        &lt;https://www.gaiaresources.com.au&gt; ,
+        &lt;https://linked.data.gov.au/org/dawe&gt; ;
+    dcterms:publisher &lt;https://linked.data.gov.au/org/dawe&gt; ;
+    dcterms:license &lt;http://purl.org/NET/rdflicense/cc-by4.0&gt; ;
+    dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
+    prof:isProfileOf
+        &lt;https://www.w3.org/TR/vocab-ssn/&gt; ;
+.</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_parts_of_the_ndes_standard">5. Parts of the NDES Standard</h2>
+<h2 id="_parts_of_the_ndes_standard">4. Parts of the NDES Standard</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This Standard comprises the resources listed in <a href="#resources-table">Table 1</a> with their <em>Profile Vocabulary</em> <code>roles</code> and some explanation of their purpose given also.</p>
@@ -740,12 +816,12 @@ The document that describes the business rules and other requirements that this 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">6. References</h2>
+<h2 id="_references">5. References</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>[<a id="PROF"></a>] World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+<p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
 </li>
 </ul>
 </div>
@@ -754,7 +830,7 @@ The document that describes the business rules and other requirements that this 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-13 08:26:50 UTC
+Last updated 2021-12-13 08:58:13 UTC
 </div>
 </div>
 </body>
