@@ -488,6 +488,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_examples">7. Examples</a>
 <ul class="sectlevel2">
 <li><a href="#_sampling_position">7.1. Sampling Position</a></li>
+<li><a href="#_sample_alternate_identifiers_example">7.2. Sample alternate identifiers example</a></li>
 </ul>
 </li>
 <li><a href="#_references">8. References</a></li>
@@ -1016,11 +1017,14 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <ul>
 <li>
 <p><a href="#_domain_model_conformance_class_requirements">Domain Model Conformance Class Requirements</a></p>
-</li>
-<li>
-<p><a href="#_sampling_space_time_position">Sampling space &amp; time position</a></p>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="#_sampling_space_time_position">Sampling space &amp; time position</a></p>
+</li>
+<li>
+<p><a href="#_sample_alternate_identifiers">Sample alternate identifiers</a></p>
+</li>
 <li>
 <p><a href="#_tern_attribute_class_properties">TERN <code>Attribute</code> class Properties</a></p>
 </li>
@@ -1121,6 +1125,9 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <li>
 <p><a href="#_message_containing_new_observations">Message containing new Observations</a></p>
 </li>
+<li>
+<p><a href="#_message_containing_observation_to_be_deleted">Message containing Observation to be deleted</a></p>
+</li>
 </ul>
 </div>
 </li>
@@ -1176,7 +1183,53 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_attribute_class_properties">5.2.2. TERN <code>Attribute</code> class Properties</h4>
+<h4 id="_sample_alternate_identifiers">5.2.2. Sample alternate identifiers</h4>
+<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/sample-alternate-identifiers"><code>req:sample-alternate-identifiers</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sample alternate identifiers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier&#8217;smanager, creator and system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/cc/domain-model"><code>cc:domain-model</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Project Co-design</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>coming</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF: <a href="https://github.com/surroundaustralia/ndes/blob/master/kg/datagraphs/examples/sample-alternate-identifiersttl">sample-alternate-identifiers.ttl</a></p>
+<p class="tableblock">Descriptions: <a href="#_sample_alternate_identifiers_example">Sample alternate identifiers example</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_tern_attribute_class_properties">5.2.3. TERN <code>Attribute</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1205,10 +1258,10 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 TERN Ontology <code>attribute</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>attribute</code> predicate indicating an IRI;</p>
 </li>
 <li>
-<p>exactly 1 TERN Ontology <code>hasSimpleValue</code> predicate indicating a an IRI or literal value;</p>
+<p>exactly 1 TERN Ontology <code>hasSimpleValue</code> predicate indicating an IRI or literal value;</p>
 </li>
 <li>
 <p>exactly 1 TERN Ontology <code>hasValue</code> predicate indicating a TERN Ontology <code>Value</code> instance;</p>
@@ -1221,13 +1274,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a Dublin Core Terms <code>type</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a Dublin Core Terms <code>type</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 <li>
 <p>a Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate, it <em>must</em> indicate a TERN Ontology <code>RDFDataset</code> instance;</p>
 </li>
 <li>
-<p>a TERN Ontology <code>isAttributeOf</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a TERN Ontology <code>isAttributeOf</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -1252,7 +1305,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_boolean_class_properties">5.2.3. TERN <code>Boolean</code> class Properties</h4>
+<h4 id="_tern_boolean_class_properties">5.2.4. TERN <code>Boolean</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1306,7 +1359,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_concept_class_properties">5.2.4. TERN <code>Concept</code> class Properties</h4>
+<h4 id="_tern_concept_class_properties">5.2.5. TERN <code>Concept</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1335,16 +1388,16 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a an IRI;</p>
+<p>exactly 1 RDF Ontology <code>value</code> predicate indicating an IRI;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>localValue</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 TERN Ontology <code>localValue</code> predicate indicating an IRI;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>localVocabulary</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 TERN Ontology <code>localVocabulary</code> predicate indicating an IRI;</p>
 </li>
 <li>
-<p>exactly 1 TERN Ontology <code>vocabulary</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>vocabulary</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -1369,7 +1422,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_count_class_properties">5.2.5. TERN <code>Count</code> class Properties</h4>
+<h4 id="_tern_count_class_properties">5.2.6. TERN <code>Count</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1426,7 +1479,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_dataset_class_properties">5.2.6. TERN <code>Dataset</code> class Properties</h4>
+<h4 id="_tern_dataset_class_properties">5.2.7. TERN <code>Dataset</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1480,7 +1533,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_date_class_properties">5.2.7. TERN <code>Date</code> class Properties</h4>
+<h4 id="_tern_date_class_properties">5.2.8. TERN <code>Date</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1534,7 +1587,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_datetime_class_properties">5.2.8. TERN <code>DateTime</code> class Properties</h4>
+<h4 id="_tern_datetime_class_properties">5.2.9. TERN <code>DateTime</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1588,7 +1641,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_deployment_class_properties">5.2.9. TERN <code>Deployment</code> class Properties</h4>
+<h4 id="_tern_deployment_class_properties">5.2.10. TERN <code>Deployment</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1655,7 +1708,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_featureofinterest_class_properties">5.2.10. TERN <code>FeatureOfInterest</code> class Properties</h4>
+<h4 id="_tern_featureofinterest_class_properties">5.2.11. TERN <code>FeatureOfInterest</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1684,7 +1737,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>exactly 1 Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> instance;</p>
@@ -1693,7 +1746,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
 </li>
 <li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div>
@@ -1737,7 +1790,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_iri_class_properties">5.2.11. TERN <code>IRI</code> class Properties</h4>
+<h4 id="_tern_iri_class_properties">5.2.12. TERN <code>IRI</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1766,7 +1819,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 RDF Ontology <code>value</code> predicate indicating a an IRI;</p>
+<p>exactly 1 RDF Ontology <code>value</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -1791,7 +1844,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_instant_class_properties">5.2.12. TERN <code>Instant</code> class Properties</h4>
+<h4 id="_tern_instant_class_properties">5.2.13. TERN <code>Instant</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1845,7 +1898,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_instrument_class_properties">5.2.13. TERN <code>Instrument</code> class Properties</h4>
+<h4 id="_tern_instrument_class_properties">5.2.14. TERN <code>Instrument</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1874,7 +1927,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
@@ -1883,7 +1936,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 RDF Schema Ontology <code>label</code> predicate indicating a <code>string</code> literal value;</p>
 </li>
 <li>
-<p>exactly 1 TERN Ontology <code>instrumentType</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>instrumentType</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -1908,7 +1961,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_managedfeature_class_properties">5.2.14. TERN <code>ManagedFeature</code> class Properties</h4>
+<h4 id="_tern_managedfeature_class_properties">5.2.15. TERN <code>ManagedFeature</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1965,7 +2018,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_observation_class_properties">5.2.15. TERN <code>Observation</code> class Properties</h4>
+<h4 id="_tern_observation_class_properties">5.2.16. TERN <code>Observation</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -1994,7 +2047,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>exactly 1 Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> instance;</p>
@@ -2012,7 +2065,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 SOSA Ontology <code>madeBySensor</code> predicate indicating a TERN Ontology <code>Sensor</code> instance;</p>
 </li>
 <li>
-<p>exactly 1 SOSA Ontology <code>observedProperty</code> predicate indicating a an IRI;</p>
+<p>exactly 1 SOSA Ontology <code>observedProperty</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>exactly 1 SOSA Ontology <code>phenomenonTime</code> predicate indicating a TERN Ontology <code>Instant</code> instance;</p>
@@ -2021,13 +2074,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>exactly 1 SOSA Ontology <code>resultTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
 </li>
 <li>
-<p>exactly 1 SOSA Ontology <code>usedProcedure</code> predicate indicating a an IRI;</p>
+<p>exactly 1 SOSA Ontology <code>usedProcedure</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>a maximum of 1 TERN Ontology <code>hasSiteVisit</code> predicate indicating a TERN Ontology <code>SiteVisit</code> instance;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>observationType</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 TERN Ontology <code>observationType</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div>
@@ -2071,7 +2124,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_observationcollection_class_properties">5.2.16. TERN <code>ObservationCollection</code> class Properties</h4>
+<h4 id="_tern_observationcollection_class_properties">5.2.17. TERN <code>ObservationCollection</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2112,7 +2165,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 SOSA Ontology <code>madeBySensor</code> predicate indicating a TERN Ontology <code>Sensor</code> instance;</p>
 </li>
 <li>
-<p>a maximum of 1 SOSA Ontology <code>observedProperty</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 SOSA Ontology <code>observedProperty</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>a maximum of 1 SOSA Ontology <code>phenomenonTime</code> predicate indicating a TERN Ontology <code>Instant</code> instance;</p>
@@ -2121,7 +2174,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 SOSA Ontology <code>resultTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
 </li>
 <li>
-<p>a minimum of 1 SOSA Ontology <code>usedProcedure</code> predicate indicating a an IRI;</p>
+<p>a minimum of 1 SOSA Ontology <code>usedProcedure</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2146,7 +2199,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_percent_class_properties">5.2.17. TERN <code>Percent</code> class Properties</h4>
+<h4 id="_tern_percent_class_properties">5.2.18. TERN <code>Percent</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2175,7 +2228,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2200,7 +2253,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_percentrange_class_properties">5.2.18. TERN <code>PercentRange</code> class Properties</h4>
+<h4 id="_tern_percentrange_class_properties">5.2.19. TERN <code>PercentRange</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2229,7 +2282,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2254,7 +2307,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_plot_class_properties">5.2.19. TERN <code>Plot</code> class Properties</h4>
+<h4 id="_tern_plot_class_properties">5.2.20. TERN <code>Plot</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2283,7 +2336,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2308,7 +2361,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_quadrat_class_properties">5.2.20. TERN <code>Quadrat</code> class Properties</h4>
+<h4 id="_tern_quadrat_class_properties">5.2.21. TERN <code>Quadrat</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2337,7 +2390,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2362,7 +2415,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_quantitativemeasure_class_properties">5.2.21. TERN <code>QuantitativeMeasure</code> class Properties</h4>
+<h4 id="_tern_quantitativemeasure_class_properties">5.2.22. TERN <code>QuantitativeMeasure</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2397,7 +2450,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 TERN Ontology <code>uncertainty</code> predicate indicating a <code>double</code> literal value;</p>
 </li>
 <li>
-<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2422,7 +2475,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_quantitativerange_class_properties">5.2.22. TERN <code>QuantitativeRange</code> class Properties</h4>
+<h4 id="_tern_quantitativerange_class_properties">5.2.23. TERN <code>QuantitativeRange</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2460,7 +2513,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 TERN Ontology <code>uncertainty</code> predicate indicating a <code>double</code> literal value;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>unit</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 TERN Ontology <code>unit</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2485,7 +2538,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_rdfdataset_class_properties">5.2.23. TERN <code>RDFDataset</code> class Properties</h4>
+<h4 id="_tern_rdfdataset_class_properties">5.2.24. TERN <code>RDFDataset</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2530,19 +2583,19 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a Dublin Core Terms <code>contributor</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a Dublin Core Terms <code>contributor</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 <li>
-<p>a Dublin Core Terms <code>creator</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a Dublin Core Terms <code>creator</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 <li>
-<p>a Dublin Core Terms <code>publisher</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a Dublin Core Terms <code>publisher</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 <li>
-<p>a Dublin Core Terms <code>source</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a Dublin Core Terms <code>source</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 <li>
-<p>a Vocabulary of Interlinked Data Ontology <code>vocabulary</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a Vocabulary of Interlinked Data Ontology <code>vocabulary</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2567,7 +2620,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_result_class_properties">5.2.24. TERN <code>Result</code> class Properties</h4>
+<h4 id="_tern_result_class_properties">5.2.25. TERN <code>Result</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2621,7 +2674,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_sample_class_properties">5.2.25. TERN <code>Sample</code> class Properties</h4>
+<h4 id="_tern_sample_class_properties">5.2.26. TERN <code>Sample</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2678,7 +2731,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_sampling_class_properties">5.2.26. TERN <code>Sampling</code> class Properties</h4>
+<h4 id="_tern_sampling_class_properties">5.2.27. TERN <code>Sampling</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2707,7 +2760,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>a maximum of 1 RDF Schema Ontology <code>comment</code> predicate indicating a <code>string</code> literal value;</p>
@@ -2722,13 +2775,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>exactly 1 SOSA Ontology <code>resultTime</code> predicate indicating a <code>dateTime</code> literal value;</p>
 </li>
 <li>
-<p>exactly 1 SOSA Ontology <code>usedProcedure</code> predicate indicating a an IRI;</p>
+<p>exactly 1 SOSA Ontology <code>usedProcedure</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>a maximum of 1 TERN Ontology <code>hasSiteVisit</code> predicate indicating a TERN Ontology <code>SiteVisit</code> instance;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>samplingType</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 TERN Ontology <code>samplingType</code> predicate indicating an IRI;</p>
 </li>
 </ul>
 </div>
@@ -2775,7 +2828,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_site_class_properties">5.2.27. TERN <code>Site</code> class Properties</h4>
+<h4 id="_tern_site_class_properties">5.2.28. TERN <code>Site</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2813,7 +2866,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 TERN Ontology <code>locationDescription</code> predicate indicating a <code>string</code> literal value;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>locationProcedure</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 TERN Ontology <code>locationProcedure</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>a maximum of 1 TERN Ontology <code>polygon</code> predicate indicating a TERN Location Alignment Ontology <code>Polygon</code> instance;</p>
@@ -2829,7 +2882,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a GeoSPARQL Ontology <code>sfWithin</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a GeoSPARQL Ontology <code>sfWithin</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 <li>
 <p>a TERN Ontology <code>hasSiteVisit</code> predicate, it <em>must</em> indicate a TERN Ontology <code>SiteVisit</code> instance;</p>
@@ -2857,7 +2910,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_sitevisit_class_properties">5.2.28. TERN <code>SiteVisit</code> class Properties</h4>
+<h4 id="_tern_sitevisit_class_properties">5.2.29. TERN <code>SiteVisit</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2886,7 +2939,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="ulist">
 <ul>
 <li>
-<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating a an IRI;</p>
+<p>a maximum of 1 Dublin Core Terms <code>type</code> predicate indicating an IRI;</p>
 </li>
 <li>
 <p>exactly 1 Vocabulary of Interlinked Data Ontology <code>inDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> instance;</p>
@@ -2923,7 +2976,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a TERN Ontology <code>hasSampling</code> predicate, it <em>must</em> indicate a TERN Ontology <code>Sampling</code> instance;</p>
 </li>
 <li>
-<p>a TERN Ontology <code>isSiteVisitOf</code> predicate, it <em>must</em> indicate a an IRI;</p>
+<p>a TERN Ontology <code>isSiteVisitOf</code> predicate, it <em>must</em> indicate an IRI;</p>
 </li>
 </ul>
 </div></div></td>
@@ -2948,7 +3001,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_system_class_properties">5.2.29. TERN <code>System</code> class Properties</h4>
+<h4 id="_tern_system_class_properties">5.2.30. TERN <code>System</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3015,7 +3068,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_text_class_properties">5.2.30. TERN <code>Text</code> class Properties</h4>
+<h4 id="_tern_text_class_properties">5.2.31. TERN <code>Text</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3069,7 +3122,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tern_transect_class_properties">5.2.31. TERN <code>Transect</code> class Properties</h4>
+<h4 id="_tern_transect_class_properties">5.2.32. TERN <code>Transect</code> class Properties</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3101,10 +3154,10 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a maximum of 1 GeoSPARQL Ontology <code>hasGeometry</code> predicate indicating a TERN Location Alignment Ontology <code>LineString</code> instance;</p>
 </li>
 <li>
-<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating a an IRI;</p>
+<p>exactly 1 TERN Ontology <code>featureType</code> predicate indicating an IRI;</p>
 </li>
 <li>
-<p>a maximum of 1 TERN Ontology <code>transectDirection</code> predicate indicating a an IRI or literal value;</p>
+<p>a maximum of 1 TERN Ontology <code>transectDirection</code> predicate indicating an IRI or literal value;</p>
 </li>
 <li>
 <p>a maximum of 1 TERN Ontology <code>transectEndPoint</code> predicate indicating a TERN Location Alignment Ontology <code>Point</code> instance;</p>
@@ -3447,6 +3500,72 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_sample_alternate_identifiers_example">7.2. Sample alternate identifiers example</h3>
+<div class="paragraph">
+<p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Alternate - non-BDR - identifiers for Sample class instances <em>MUST</em> be indicated the property <code>dcterms:identifier</code> and consist of a literal value of a custom datatyle with the datatype definition providing information about the identifier&#8217;smanager, creator and system</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If a data supplier wishes to record a non-BDR identifier for a <code>tern:Sample</code> instance, such as a museum specimen, then the pattern for doing that is to use a <code>dcterms:identifier</code> property for the <code>term:Sample</code> instance like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;
+	a tern:Sample ;
+	dcterms:identifier "ALT-IDENTIFIER"^^CUSTOM-DATATYPE ;
+	...
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of <code>&lt;BDR-PLACEHOLDER-IDENTIFIER&gt;</code> might be something like <code><a href="http://example.org/1234-4567-890" class="bare">http://example.org/1234-4567-890</a></code> and the BDR will replace this with something like <code>&lt;<a href="https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij" class="bare">https://linked.data.gov.au/dataset/bdr/sample/abcd-efg-hij</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>The value of <code>ALT-IDENTIFIER</code> can be anything, such as a URL, a number, a string, etc.: this will be determined by the identifier generator, such as a museum. In the figure below, a dummy Western Australian Museum identifier of <code>WAM-75</code> and an International GeoSample Number <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> of "1073/123-456" is given. The <code>CUSTOM-DATATYPE</code> is an RDF data type descriptor that must be lodged with the BDR. In the figure below, these are <code>bdr:WAMID</code> &amp; <code>bdr:IGSN</code> indicating "Western Australian Museum ID" and "International GeoSample Number", respectively,</p>
+</div>
+<div id="sample-alternate-identifiers-fig" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ndes//img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
+</div>
+<div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes</div>
+</div>
+<div class="paragraph">
+<p>The RDF corresponding to the figure above is goven below:app-name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;https://linked.data.gov.au/dataset/bdr/sample/x&gt;
+	a tern:Sample ;
+    dcterms:identifier
+		"WAM-75"^^bdr:WAMID ,
+		"1073/123-456"^^bdr:IGSN ;
+    ...
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Registering custom datatypes with the BDR is a controlled admininstrative task, i.e. one which cannot be accomplished by sending in a special message, so please contact BDR admin to register these.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If an instance of <code>term:Sample`</code> is a <code>term:MaterialSample</code>, then any <code>dcterms:identifier</code> property supplied for it will be considered a <code>dwc:materialSampleID</code> property too.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3462,9 +3581,15 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 </div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. See <a href="https://www.igsn.org/" class="bare">https://www.igsn.org/</a>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-13 09:26:57 UTC
+Last updated 2021-12-13 12:12:22 UTC
 </div>
 </div>
 </body>
