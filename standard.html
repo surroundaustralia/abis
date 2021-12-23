@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>NDES Standard Definition</title>
+<title>ABIS Definition</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>NDES Standard Definition</h1>
+<h1>ABIS Definition</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -456,7 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_profiles_vocabulary_overview">3.1. Profiles Vocabulary overview</a></li>
 </ul>
 </li>
-<li><a href="#_parts_of_the_ndes_standard">4. Parts of the NDES Standard</a></li>
+<li><a href="#_parts_of_the_abis">4. Parts of the ABIS</a></li>
 <li><a href="#_references">5. References</a></li>
 </ul>
 </div>
@@ -497,7 +497,7 @@ DRAFT, incomplete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This resource describes the structure and multiple parts of the ABIS Standard as well as the formalisms used in their definitions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
@@ -532,9 +532,9 @@ See that profile&#8217;s main document for details of the other profile parts an
 </table>
 <div id="img-rdf" class="imageblock text-center">
 <div class="content">
-<img src="https://surroundaustralia.github.io/abis//img/standard-overview.png" alt="NDES Standard Overview" width="600" height="400">
+<img src="https://surroundaustralia.github.io/abis//img/standard-overview.png" alt="ABIS Overview" width="600" height="400">
 </div>
-<div class="title">Figure 1. Overview of the NDES Standard and it&#8217;s parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.</div>
+<div class="title">Figure 1. Overview of the ABIS and it&#8217;s parts. The Standard is a conceptual thing containing documents, data objects and so on. This document is the Standard Definition document.</div>
 </div>
 </div>
 </div>
@@ -724,7 +724,7 @@ The document that describes the business rules and other requirements that this 
 <p>The formal declaration of this Standard as a conceptual <em>profile</em> is given here in with details in the Section <a href="#_metadata">Metadata</a> and this document&#8217;s resource description in the following section.</p>
 </div>
 <div class="paragraph">
-<p>The machein-redable form of this Standard&#8217;s conceptual <em>profile</em> declaration is provided in the RDF <a href="https://surroundaustralia.github.io/ndes/profile.ttl">profile.ttl</a> resource and reproduced here for convenience:</p>
+<p>The machein-redable form of this Standard&#8217;s conceptual <em>profile</em> declaration is provided in the RDF <a href="https://surroundaustralia.github.io/abis/profile.ttl">profile.ttl</a> resource and reproduced here for convenience:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -734,8 +734,8 @@ The document that describes the business rules and other requirements that this 
 
 &lt;https://linked.data.gov.au/def/abis&gt;
     a prof:Profile , dcterms:Standard ;
-    dcterms:title "NDES Standard Definition" ;
-    dcterms:description "This resource describes the structure and multiple parts of the NDES Standard as well as the formalisms used in their definitions, in machine-readable form." ;
+    dcterms:title "ABIS Definition" ;
+    dcterms:description "This resource describes the structure and multiple parts of the ABIS as well as the formalisms used in their definitions, in machine-readable form." ;
     dcterms:created "2021-12-13"^^xsd:date ;
     dcterms:modified "2021-12-13"^^xsd:date ;
     # dcterms:issued "0000-00-00"^^xsd:date ;
@@ -755,7 +755,7 @@ The document that describes the business rules and other requirements that this 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_parts_of_the_ndes_standard">4. Parts of the NDES Standard</h2>
+<h2 id="_parts_of_the_abis">4. Parts of the ABIS</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This Standard comprises the resources listed in <a href="#resources-table">Table 1</a> with their <em>Profile Vocabulary</em> <code>roles</code> and some explanation of their purpose given also.</p>
@@ -776,19 +776,19 @@ The document that describes the business rules and other requirements that this 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ndes/standard.html">standard.html</a></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/abis/standard.html">standard.html</a></p>
 <p class="tableblock"><em>(this document)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/specification">Profile Definition</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This document formally defines this Standard&#8217;s parts and relations to other Standards.</p>
 <p class="tableblock">In cases of conflict between this document and the machine-readable form, this document is normative</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ndes/profile.ttl">profile.ttl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/abis/profile.ttl">profile.ttl</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/specification">Profile Definition</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable (RDF, Turtle syntax) version of this document.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ndes/specification.html">specification.html</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/abis/specification.html">specification.html</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/specification">Specification</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The document that lists the normative requirements - business rules - for data to conform to in order to be compliant</p></td>
 </tr>
@@ -803,22 +803,22 @@ The document that describes the business rules and other requirements that this 
 <td class="tableblock halign-left valign-top"><p class="tableblock">The main domain model for this Standard, in machine-readable form (RDF Turtle)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/mappings">RDF Mappings (folder)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/mappings">RDF Mappings (folder)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/mapping">Mapping</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable RDF mappings from NDES elements to elements from other Standards, such as Darwin Core Terms.</p>
-<p class="tableblock">See also the <em>Mappings</em> section within the <a href="https://surroundaustralia.github.io/ndes/specification.html">specification.html</a> document</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.</p>
+<p class="tableblock">See also the <em>Mappings</em> section within the <a href="https://surroundaustralia.github.io/abis/specification.html">specification.html</a> document</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/ndes/tree/master/kg/datagraphs/examples">RDF Examples (folder)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/abis/tree/master/kg/datagraphs/examples">RDF Examples (folder)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/example">Example</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable RDF mappings from NDES elements to elements from other Standards, such as Darwin Core Terms.</p>
-<p class="tableblock">See also the <em>Examples</em> section within the <a href="https://surroundaustralia.github.io/ndes/specification.html">specification.html</a> document</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable RDF mappings from ABIS elements to elements from other Standards, such as Darwin Core Terms.</p>
+<p class="tableblock">See also the <em>Examples</em> section within the <a href="https://surroundaustralia.github.io/abis/specification.html">specification.html</a> document</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/ndes/tree/master/kg/validators">Shapes validators (folder)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/surroundaustralia/abis/tree/master/kg/validators">Shapes validators (folder)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/validation">Validation</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable, <a href="https://www.w3.org/TR/shacl/">Shapes Constraint Language (SHACL)</a>, validators.</p>
-<p class="tableblock">These are used to validate data claiming conformance to the NDES, for instance by the <a href="http://ndesgateway.surroundaustralia.com/">NDES Gateway</a> to validate NDES data bound for the Biodiversity Data Repository.</p>
+<p class="tableblock">These are used to validate data claiming conformance to the ABIS, for instance by the <a href="http://bdrgateway.surroundaustralia.com/">BDR Gateway</a> to validate ABIS data bound for the Biodiversity Data Repository.</p>
 <p class="tableblock">Note that within the Specification Document, individual Requirements link to the individual validators relevant for them.</p></td>
 </tr>
 <tr>
@@ -845,7 +845,7 @@ The document that describes the business rules and other requirements that this 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-23 00:24:13 UTC
+Last updated 2021-12-23 00:32:52 UTC
 </div>
 </div>
 </body>
