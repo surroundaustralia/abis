@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>NDES Specification</title>
+<title>ABIS Specification</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>NDES Specification</h1>
+<h1>ABIS Specification</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -466,23 +466,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_index">4.1. Conformance Class Index</a></li>
 <li><a href="#_domain_model_conformance_class">4.2. Domain Model Conformance Class</a></li>
-<li><a href="#_ndes_bd_messages_conformance_class">4.3. NDES-BD Messages Conformance Class</a></li>
+<li><a href="#_abis_messages_conformance_class">4.3. ABIS Messages Conformance Class</a></li>
 </ul>
 </li>
 <li><a href="#_requirements">5. Requirements</a>
 <ul class="sectlevel2">
 <li><a href="#_requirements_index">5.1. Requirements Index</a></li>
 <li><a href="#_domain_model_conformance_class_requirements">5.2. Domain Model Conformance Class Requirements</a></li>
-<li><a href="#_ndes_bd_message_conformance_class_requirements">5.3. NDES-BD Message Conformance Class Requirements</a></li>
+<li><a href="#_abis_message_conformance_class_requirements">5.3. ABIS Message Conformance Class Requirements</a></li>
 </ul>
 </li>
 <li><a href="#_sources">6. Sources</a>
 <ul class="sectlevel2">
-<li><a href="#_ndes_db_messaging">6.1. NDES-DB Messaging</a></li>
+<li><a href="#_abis_messaging">6.1. ABIS Messaging</a></li>
 <li><a href="#_tern_ontology">6.2. TERN Ontology</a></li>
 <li><a href="#_darwin_core_rdf">6.3. Darwin Core RDF</a></li>
 <li><a href="#_audubon_core_term_list">6.4. Audubon Core Term List</a></li>
-<li><a href="#_ndes_bd_gateway_messaging">6.5. NDES-BD Gateway Messaging</a></li>
+<li><a href="#_abis_messaging_2">6.5. ABIS Messaging</a></li>
 </ul>
 </li>
 <li><a href="#_examples">7. Examples</a>
@@ -523,15 +523,15 @@ DRAFT, incomplete
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IRI</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/spec" class="bare">https://linked.data.gov.au/def/ndesbd/spec</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/spec" class="bare">https://linked.data.gov.au/def/abis/spec</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">National Data Exchange Standard&#8217;s Specifciation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Biodiversity Information Standard&#8217;s Specifciation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This document lists the normative requirements for data aiming to conform to the <a href="https://linked.data.gov.au/def/ndesdb">National Data Exchange Standard</a>. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This document lists the normative requirements for data aiming to conform to the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>. It is to be used as the authoratitive, human-readable, identified, list of individual requirements from which other profile artifacts, such as data validators, are derived.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
@@ -555,7 +555,7 @@ DRAFT, incomplete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Further information</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This specification is part of the Australian <a href="https://linked.data.gov.au/def/ndes">National Data Exchange Standard</a>. That Standard is established as a <em>profile</em> of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This specification is part of the Australian <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>. That Standard is established as a <em>profile</em> of multiple other stnadards and is, itself, made of many parts, of which this Specification is only one.<br>
 See that profile&#8217;s main document for details of the other profile parts and how this Specification related to them.</p></td>
 </tr>
 </tbody>
@@ -568,19 +568,19 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="sect2">
 <h3 id="_abstract">2.1. Abstract</h3>
 <div class="paragraph">
-<p>This Specification is the normative listing of requirements for data conformig to the National Data Exchange Standard for Biodiversity Data (NDES-BD).</p>
+<p>This Specification is the normative listing of requirements for data conformig to the Australian Biodiversity Information Standard for Biodiversity Data (ABIS).</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_normative_status">2.2. Normative Status</h3>
 <div class="paragraph">
-<p>This Specification is normative for the NDES-BD and take precedence over other elements of the Standard where conflics are found.</p>
+<p>This Specification is normative for the ABIS and take precedence over other elements of the Standard where conflics are found.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_standard_parts">2.3. Standard Parts</h3>
 <div class="paragraph">
-<p>This <em>Specification</em> document one of many resources that together make the NDES-BD <em>Standard</em>. The Standard and its parts are formally defined using terminology from the <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
+<p>This <em>Specification</em> document one of many resources that together make the ABIS <em>Standard</em>. The Standard and its parts are formally defined using terminology from the <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
 </div>
 <div class="paragraph">
 <p>Other parts of this <em>Standard</em> are:</p>
@@ -595,7 +595,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <p>ontologies and other target data models</p>
 </li>
 <li>
-<p>including the overarching NDES-DB Ontology and the TERN Ontology</p>
+<p>including the overarching ABIS Ontology and the TERN Ontology</p>
 </li>
 </ul>
 </div>
@@ -605,7 +605,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="ulist">
 <ul>
 <li>
-<p>machine-readable validation code to validate data claiming conformance to the NDES-DB</p>
+<p>machine-readable validation code to validate data claiming conformance to the ABIS</p>
 </li>
 </ul>
 </div>
@@ -633,7 +633,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 </ul>
 </div>
 <div class="paragraph">
-<p>The formal and linked listing of this Standards&#8217;s parts is found in its <em>Profile Declaration</em> online at <a href="https://linked.data.gov.au/def/ndesdb">National Data Exchange Standard</a>.</p>
+<p>The formal and linked listing of this Standards&#8217;s parts is found in its <em>Profile Declaration</em> online at <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -654,8 +654,8 @@ See that profile&#8217;s main document for details of the other profile parts an
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>req:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/ndesbd/req/" class="bare">https://linked.data.gov.au/def/ndesbd/req/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NDES-BD Requirements namespace</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Requirements namespace</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
@@ -669,13 +669,13 @@ See that profile&#8217;s main document for details of the other profile parts an
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nex:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/ndesbd/examples/" class="bare">https://linked.data.gov.au/def/ndesbd/examples/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDES-BD Canonical Examples namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/examples/" class="bare">https://linked.data.gov.au/def/abis/examples/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Canonical Examples namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nsh:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/ndesbd/shape/" class="bare">https://linked.data.gov.au/def/ndesbd/shape/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDES-BD Validators Shapes namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/shape/" class="bare">https://linked.data.gov.au/def/abis/shape/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Validators Shapes namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
@@ -726,7 +726,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <h2 id="_introduction">3. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document is a list of <em>requirements</em> for data to meet in order to conform to the <a href="https://linked.data.gov.au/def/ndes">National Data Exchange Standard</a>. Each <em>requirement</em> is defined with a table of values like this:</p>
+<p>This document is a list of <em>requirements</em> for data to meet in order to conform to the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>. Each <em>requirement</em> is defined with a table of values like this:</p>
 </div>
 <table class="tableblock frame-none grid-none stripes-even" style="width: 25%;">
 <colgroup>
@@ -827,7 +827,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="sect2">
 <h3 id="_identifier">3.1. Identifier</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <a href="https://linked.data.gov.au/def/ndesbd/req/" class="bare">https://linked.data.gov.au/def/ndesbd/req/</a> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
+<p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
 </div>
 <div class="paragraph">
 <p>The IRI namespace plus the number make the complete IRI of the <em>requirement</em>.</p>
@@ -845,7 +845,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="sect2">
 <h3 id="_definition">3.3. Definition</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a> since the <em>target models</em> of the NDES-BD are themselves OWL Ontologies.</p>
+<p>Each <em>requirement</em> is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a> since the <em>target models</em> of the ABIS are themselves OWL Ontologies.</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -856,7 +856,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="title">Note</div>
 </td>
 <td class="content">
-if there are differences between derivatives of this specification, including the NDES-BD validator, these definitions take precendence
+if there are differences between derivatives of this specification, including the ABIS validator, these definitions take precendence
 </td>
 </tr>
 </table>
@@ -867,7 +867,7 @@ if there are differences between derivatives of this specification, including th
 <div class="sect2">
 <h3 id="_conformance_classes_list">3.4. Conformance Classes list</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the NDES-BD, the Conformance Classes form modules which data may conform to individually.</p>
+<p>Each <em>requirement</em> is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.</p>
 </div>
 <div class="paragraph">
 <p>Each <em>requirement</em> needs to indicate its Conformance Classes by linking to them.</p>
@@ -876,16 +876,16 @@ if there are differences between derivatives of this specification, including th
 <div class="sect2">
 <h3 id="_contains_source_notes">3.5. Contains source notes</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> contains source notes  what motivated the <em>requirement</em>'s definition, including references to source documents or other NDES-BD artifacts, such as ontologies.</p>
+<p>Each <em>requirement</em> contains source notes  what motivated the <em>requirement</em>'s definition, including references to source documents or other ABIS artifacts, such as ontologies.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_related_validators">3.6. Related validators</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> contains references to individual, identified, data validation <em>shapes</em> defined in the NDES-BD Profile&#8217;s <em>validator</em> used to validate <a href="https://www.w3.org/RDF/">Resource Description Framework (RDF)</a> data - the only form of data allowed to be used for NDES-BD data exchange.</p>
+<p>Each <em>requirement</em> contains references to individual, identified, data validation <em>shapes</em> defined in the ABIS Profile&#8217;s <em>validator</em> used to validate <a href="https://www.w3.org/RDF/">Resource Description Framework (RDF)</a> data - the only form of data allowed to be used for ABIS data exchange.</p>
 </div>
 <div class="paragraph">
-<p>The content of <em>validator_s is contianed in the NDES-BD' _Validator</em> resource.</p>
+<p>The content of <em>validator_s is contianed in the ABIS' _Validator</em> resource.</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -910,7 +910,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>For each <em>requirement</em>, references are given to at least two <em>canonical examples</em> of RDF data that do (positive example) and don&#8217;t (negative example) pass validation using the validators related to the <em>requirement</em>.</p>
 </div>
 <div class="paragraph">
-<p>The content of the <em>canonical examples</em>, i.e. the examples' data, is contianed in the NDES-BD' <em>Canonical Examples</em> resource.</p>
+<p>The content of the <em>canonical examples</em>, i.e. the examples' data, is contianed in the ABIS' <em>Canonical Examples</em> resource.</p>
 </div>
 </div>
 </div>
@@ -919,7 +919,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <h2 id="_conformance_classes">4. Conformance Classes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Conformance Classes are groupings of Requirements within the NDES-BD. Data claiming conforming to the NDES-BD may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to <em>all</em> the Requirements within it, not just some.</p>
+<p>Conformance Classes are groupings of Requirements within the ABIS. Data claiming conforming to the ABIS may indicate conformance per-Conformance Class. Conformance  to a Conformance Class means conforming to <em>all</em> the Requirements within it, not just some.</p>
 </div>
 <div class="sect2">
 <h3 id="_conformance_class_index">4.1. Conformance Class Index</h3>
@@ -932,7 +932,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p><a href="#_domain_model_conformance_class">Domain Model Conformance Class</a></p>
 </li>
 <li>
-<p><a href="#_ndes_bd_messages_conformance_class">NDES-BD Messages Conformance Class</a></p>
+<p><a href="#_abis_messages_conformance_class">ABIS Messages Conformance Class</a></p>
 </li>
 </ul>
 </div>
@@ -953,7 +953,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:domain-model</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:domain-model</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -965,13 +965,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Requirements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/observation-properties"><code>req:observation-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/observation-properties"><code>req:observation-properties</code></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_ndes_bd_messages_conformance_class">4.3. NDES-BD Messages Conformance Class</h3>
+<h3 id="_abis_messages_conformance_class">4.3. ABIS Messages Conformance Class</h3>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 50%;">
@@ -986,19 +986,19 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages"><code>cc:ndes-messages</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages"><code>cc:ndes-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDES-BD Messages Conformance Class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Messages Conformance Class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The set of requirements needed to be met to ensure conformance with the NDES-BD' Gateway&#8217;s message needs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The set of requirements needed to be met to ensure conformance with the ABIS' Gateway&#8217;s message needs</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Requirements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/message-new-observations"><code>req:message-new-observations</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/message-new-observations"><code>req:message-new-observations</code></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1009,7 +1009,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <h2 id="_requirements">5. Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Requirements are the individual rules that data claiming conformance to the NDES-BD must abide by.</p>
+<p>Requirements are the individual rules that data claiming conformance to the ABIS must abide by.</p>
 </div>
 <div class="sect2">
 <h3 id="_requirements_index">5.1. Requirements Index</h3>
@@ -1119,7 +1119,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </li>
 <li>
-<p><a href="#_ndes_bd_message_conformance_class_requirements">NDES-BD Message Conformance Class Requirements</a></p>
+<p><a href="#_abis_message_conformance_class_requirements">ABIS Message Conformance Class Requirements</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1152,7 +1152,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/sampling-position"><code>req:sampling-position</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sampling-position"><code>req:sampling-position</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1164,7 +1164,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/cc/domain-model"><code>cc:domain-model</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/cc/domain-model"><code>cc:domain-model</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1198,7 +1198,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/sample-alternate-identifiers"><code>req:sample-alternate-identifiers</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sample-alternate-identifiers"><code>req:sample-alternate-identifiers</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1210,7 +1210,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/cc/domain-model"><code>cc:domain-model</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/cc/domain-model"><code>cc:domain-model</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1244,7 +1244,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/attribute-properties"><code>req:Attribute-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/attribute-properties"><code>req:Attribute-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1287,7 +1287,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1320,7 +1320,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/boolean-properties"><code>req:Boolean-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/boolean-properties"><code>req:Boolean-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1341,7 +1341,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1374,7 +1374,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/concept-properties"><code>req:Concept-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/concept-properties"><code>req:Concept-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1404,7 +1404,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1437,7 +1437,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/count-properties"><code>req:Count-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/count-properties"><code>req:Count-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1461,7 +1461,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1494,7 +1494,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/dataset-properties"><code>req:Dataset-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/dataset-properties"><code>req:Dataset-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1515,7 +1515,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1548,7 +1548,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/date-properties"><code>req:Date-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/date-properties"><code>req:Date-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1569,7 +1569,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1602,7 +1602,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/datetime-properties"><code>req:DateTime-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/datetime-properties"><code>req:DateTime-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1623,7 +1623,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1656,7 +1656,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/deployment-properties"><code>req:Deployment-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/deployment-properties"><code>req:Deployment-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1690,7 +1690,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1723,7 +1723,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/featureofinterest-properties"><code>req:FeatureOfInterest-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/featureofinterest-properties"><code>req:FeatureOfInterest-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1772,7 +1772,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1805,7 +1805,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/iri-properties"><code>req:IRI-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/iri-properties"><code>req:IRI-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1826,7 +1826,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1859,7 +1859,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/instant-properties"><code>req:Instant-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/instant-properties"><code>req:Instant-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1880,7 +1880,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1913,7 +1913,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/instrument-properties"><code>req:Instrument-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/instrument-properties"><code>req:Instrument-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1943,7 +1943,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -1976,7 +1976,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/managedfeature-properties"><code>req:ManagedFeature-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/managedfeature-properties"><code>req:ManagedFeature-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2000,7 +2000,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2033,7 +2033,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/observation-properties"><code>req:Observation-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/observation-properties"><code>req:Observation-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2106,7 +2106,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2139,7 +2139,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/observationcollection-properties"><code>req:ObservationCollection-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/observationcollection-properties"><code>req:ObservationCollection-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2181,7 +2181,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2214,7 +2214,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/percent-properties"><code>req:Percent-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/percent-properties"><code>req:Percent-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2235,7 +2235,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2268,7 +2268,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/percentrange-properties"><code>req:PercentRange-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/percentrange-properties"><code>req:PercentRange-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2289,7 +2289,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2322,7 +2322,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/plot-properties"><code>req:Plot-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/plot-properties"><code>req:Plot-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2343,7 +2343,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2376,7 +2376,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/quadrat-properties"><code>req:Quadrat-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/quadrat-properties"><code>req:Quadrat-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2397,7 +2397,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2430,7 +2430,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/quantitativemeasure-properties"><code>req:QuantitativeMeasure-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/quantitativemeasure-properties"><code>req:QuantitativeMeasure-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2457,7 +2457,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2490,7 +2490,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/quantitativerange-properties"><code>req:QuantitativeRange-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/quantitativerange-properties"><code>req:QuantitativeRange-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2520,7 +2520,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2553,7 +2553,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/rdfdataset-properties"><code>req:RDFDataset-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/rdfdataset-properties"><code>req:RDFDataset-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2602,7 +2602,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2635,7 +2635,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/result-properties"><code>req:Result-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/result-properties"><code>req:Result-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2656,7 +2656,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2689,7 +2689,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/sample-properties"><code>req:Sample-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sample-properties"><code>req:Sample-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2713,7 +2713,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2746,7 +2746,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/sampling-properties"><code>req:Sampling-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sampling-properties"><code>req:Sampling-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2810,7 +2810,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2843,7 +2843,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/site-properties"><code>req:Site-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/site-properties"><code>req:Site-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2892,7 +2892,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -2925,7 +2925,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/sitevisit-properties"><code>req:SiteVisit-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/sitevisit-properties"><code>req:SiteVisit-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -2983,7 +2983,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -3016,7 +3016,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/system-properties"><code>req:System-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/system-properties"><code>req:System-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -3050,7 +3050,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -3083,7 +3083,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/text-properties"><code>req:Text-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/text-properties"><code>req:Text-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -3104,7 +3104,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -3137,7 +3137,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/transect-properties"><code>req:Transect-properties</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/transect-properties"><code>req:Transect-properties</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -3170,7 +3170,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/tern-ontology"><code>cc:tern-ontology</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -3189,7 +3189,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ndes_bd_message_conformance_class_requirements">5.3. NDES-BD Message Conformance Class Requirements</h3>
+<h3 id="_abis_message_conformance_class_requirements">5.3. ABIS Message Conformance Class Requirements</h3>
 <div class="sect3">
 <h4 id="_message_containing_new_observations">5.3.1. Message containing new Observations</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
@@ -3206,7 +3206,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/message-new-observations"><code>req:message-new-observations</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/message-new-observations"><code>req:message-new-observations</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -3215,7 +3215,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the NDES-BD Ontology&#8217;s <code>NewObservationsMessage</code> class <em>MUST</em> contain:</p>
+<p>Instances of the ABIS Ontology&#8217;s <code>NewObservationsMessage</code> class <em>MUST</em> contain:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3223,22 +3223,22 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>a minimum of 1 RDFS Ontology <code>member</code> predicate indicating a SOSA Ontology <code>ObservationCollection</code> class instance;</p>
 </li>
 <li>
-<p>exactly 1 NDES-BD Ontology <code>targetDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> class instance.</p>
+<p>exactly 1 ABIS Ontology <code>targetDataset</code> predicate indicating a TERN Ontology <code>RDFDataset</code> class instance.</p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages"><code>cc:ndes-messages</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages"><code>cc:ndes-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDES-BD Gateway Messaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/shape/message-new-observations-01"><code>nsh:message-new-observations-01</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/shape/message-new-observations-01"><code>nsh:message-new-observations-01</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
@@ -3263,7 +3263,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/req/message-delete-observations"><code>req:message-delete-observations</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/message-delete-observations"><code>req:message-delete-observations</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -3272,7 +3272,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the NDES-BD Ontology&#8217;s <code>DeleteObservationsMessage</code> class <em>MUST</em> contain:</p>
+<p>Instances of the ABIS Ontology&#8217;s <code>DeleteObservationsMessage</code> class <em>MUST</em> contain:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3287,15 +3287,15 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/conformanceclass/ndes-messages"><code>cc:ndes-messages</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/ndes-messages"><code>cc:ndes-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDES-BD Gateway Messaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/shape/message-delete-observations-01"><code>nsh:message-delete-observations-01</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/shape/message-delete-observations-01"><code>nsh:message-delete-observations-01</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
@@ -3314,7 +3314,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p>The sources listed here are documents, agreements, other Standards and so on from which the Requirements in this Specification originate.</p>
 </div>
 <div class="sect2">
-<h3 id="_ndes_db_messaging">6.1. NDES-DB Messaging</h3>
+<h3 id="_abis_messaging">6.1. ABIS Messaging</h3>
 <div class="paragraph">
 <p>Requirements for messages to tbe Biodiversity Data Repository.</p>
 </div>
@@ -3326,11 +3326,11 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Authoratitive copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ndesbd/ont" class="bare">https://linked.data.gov.au/def/ndesbd/ont</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/ont" class="bare">https://linked.data.gov.au/def/abis/ont</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Local copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kg/ontologies/ndesbd.ttl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kg/ontologies/abis.ttl</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -3402,9 +3402,9 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect2">
-<h3 id="_ndes_bd_gateway_messaging">6.5. NDES-BD Gateway Messaging</h3>
+<h3 id="_abis_messaging_2">6.5. ABIS Messaging</h3>
 <div class="paragraph">
-<p>Requirements for the functioning of the NDES-DB Gateway API.</p>
+<p>Requirements for creating packages of ABIS data - "ABIS Messages".</p>
 </div>
 <table class="tableblock frame-none grid-none stripes-even" style="width: 50%;">
 <colgroup>
@@ -3447,7 +3447,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 <div id="sampling-position" class="imageblock">
 <div class="content">
-<img src="https://surroundaustralia.github.io/ndes//img/sample-positioning.png" alt="Options for the spatial positioning of `tern:Sampling` instances">
+<img src="https://surroundaustralia.github.io/abis//img/sample-positioning.png" alt="Options for the spatial positioning of `tern:Sampling` instances">
 </div>
 <div class="title">Figure 1. Options for the spatial positioning of <code>tern:Sampling</code> instances. Left: direct positioning; Centre: indirect positioning via linking to a <code>tern:Site</code>; Right: Indirect positioning by linking to a non-Site spatial object (a <code>geo:Feature</code>) using a <em>spatial relations</em> property.</div>
 </div>
@@ -3532,7 +3532,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 <div id="sample-alternate-identifiers-fig" class="imageblock">
 <div class="content">
-<img src="https://surroundaustralia.github.io/ndes//img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
+<img src="https://surroundaustralia.github.io/abis//img/sample-alternate-identifiers.png" alt="An example of a `tern:Sample` instance">
 </div>
 <div class="title">Figure 2. An example of a <code>tern:Sample</code> instance in the Biodiversity Data Repository with a BDR-ssued primary identifier - the IRI - and two alternat identifers with custom datatypes</div>
 </div>
@@ -3589,7 +3589,7 @@ If an instance of <code>term:Sample`</code> is a <code>term:MaterialSample</code
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-13 12:12:22 UTC
+Last updated 2021-12-23 00:24:13 UTC
 </div>
 </div>
 </body>
