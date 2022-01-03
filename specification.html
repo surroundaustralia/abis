@@ -3600,7 +3600,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 
 &lt;http://createme.org/exists-2022-01-03-5432&gt;
 	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;
@@ -3631,7 +3631,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 
 &lt;http://createme.org/exists-2022-01-03-5432&gt;
 	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;
@@ -3685,7 +3685,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 
 &lt;http://createme.org/abcdefg&gt;
 	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;
@@ -3718,7 +3718,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 
 &lt;http://createme.org/abcdefg&gt;
 	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;
@@ -3763,7 +3763,8 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
     void:inDataset &lt;dataset/fake&gt; ;
     sosa:isResultOf &lt;http://createme.org/2&gt; ;
     sosa:isSampleOf &lt;site/tbjc&gt; ;
-    tern:featureType &lt;http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7&gt; ;
+    tern:featureType
+		&lt;http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7&gt; ;
 .</code></pre>
 </div>
 </div>
@@ -3786,7 +3787,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 <p>All the required properties of both the <code>tern:Sampling</code> &amp; <code>tern:Sample</code> instances, as specified by the <em>Domain Model</em> requirements, are present in this data. It is presumed here that the site <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc</a></code> (using the short form IRI <code>&lt;site/tbjc&gt;</code> in the data above) and the dataset <code><a href="https://linked.data.gov.au/dataset/bdr/dataset/fake" class="bare">https://linked.data.gov.au/dataset/bdr/dataset/fake</a></code> (<code>&lt;dataset/fake&gt;</code>) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.</p>
 </div>
 <div class="paragraph">
-<p>Validation of this message will return a <code>true</code> response and ingestion into the BDR will return a response similar to this:</p>
+<p>Validation of this message will return <code>true</code> and creation of its content in the BDR will return a response similar to this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3796,7 +3797,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 @base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
 
 &lt;message/12347&gt;
-    a bdrm:IngestMessage ;
+    a bdrm:CreateResponseMessage ;
     dcterms:hasPart
         &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
         &lt;http://createme.org/2&gt; ,
@@ -3839,7 +3840,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 @base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
 
 &lt;message/12347&gt;
-    a bdrm:IngestMessage ;
+    a bdrm:CreateResponseMessage ;
     dcterms:hasPart
         &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
         &lt;http://createme.org/2&gt; ,
@@ -3848,12 +3849,12 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 
 &lt;http://createme.org/create-msg-2022-01-03-968574&gt;
 	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;http://createme.org/2&gt;
 	owl:sameAs &lt;sampling/12345&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;http://createme.org/3&gt;
@@ -3863,16 +3864,160 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="paragraph">
-<p>In the ingestion message above, the client message <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code> and its contained <code>tern:Sampling</code> instance, <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>, have been indested successfully but not the <code>tern:Sample</code> instance.</p>
+<p>In the creation message above, the client message <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code> and its contained <code>tern:Sampling</code> instance, <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>, have been indested successfully but not the <code>tern:Sample</code> instance.</p>
 </div>
 <div class="paragraph">
 <p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identifiy with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>.</p>
+</div>
+<div class="sect3">
+<h4 id="_creating_non_bdr_objects">7.3.1. Creating non-BDR objects</h4>
+<div class="paragraph">
+<p>The following RDF data adds an externally-defined vocabulary to the BDR:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix geo: &lt;http://www.opengis.net/ont/geosparql#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix tern: &lt;https://w3id.org/tern/ontologies/tern/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
+    a bdrm:CreateMessage ;
+    dcterms:hasPart &lt;http://example.com/voc/habitats-extended&gt; ;
+.
+
+&lt;http://example.com/voc/habitats-extended&gt;
+    a skos:ConceptScheme ;
+    skos:prefLabel "BDR Extended Feature Types"@en ;
+    ...
+    skos:hasTopConcept
+		&lt;http://example.com/voc/habitats-extended/underground&gt; ,
+		&lt;http://example.com/voc/habitats-extended/underwater&gt; ;
+.
+
+&lt;http://example.com/voc/habitats-extended/underground&gt;
+    a skos:Concept ;
+    skos:prefLabel "Underground Habitat"@en ;
+    ...
+    skos:topConceptOf &lt;http://example.com/voc/habitats-extended&gt; ;
+.
+
+&lt;http://example.com/voc/habitats-extended/underwater&gt;
+    a skos:Concept ;
+    skos:prefLabel "Underwater Habitat"@en ;
+    ...
+    skos:topConceptOf &lt;http://example.com/voc/habitats-extended&gt; ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the message above, the <code>CreaeMessage</code> only refers to the <code>ConceptScheme</code> instance added to the BDR, not each of its contained <code>Concept</code> instances. The alead-defined IRI of the <code>ConceptScheme</code> is given - not a <code><a href="http://createme.org" class="bare">http://createme.org</a></code> IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.</p>
+</div>
+<div class="paragraph">
+<p>The BDR may erspond to this sort of message with the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:CreateResponseMessage ;
+    dcterms:hasPart
+        &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
+        &lt;http://example.com/voc/habitats-extended&gt; ;
+.
+
+&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:exists true ;
+.
+
+&lt;http://example.com/voc/habitats-extended&gt;
+	bdrm:exists true ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, <code>&lt;message/12344&gt;</code>. It also confirms the existence within it of the vocabulary with <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a> bdrm:exists true</code>.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_update_messages">7.4. Update Messages</h3>
 <div class="paragraph">
-<p><em>TODO</em></p>
+<p>An update message sent to the BDR can update any item that the client has permission to update - BRD-managed things like Sites &amp; Samples or other things like vocabularies. An update message might look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix tern: &lt;https://w3id.org/tern/ontologies/tern/&gt; .
+
+&lt;http://createme.org/abcdefghij&gt;
+    a bdrm:UpdateMessage ;
+    dcterms:hasPart
+        &lt;https://linked.data.gov.au/dataset/bdr/site/asm&gt; ,
+		&lt;http://example.com/voc/habitats-extended&gt; ;
+.
+
+&lt;https://linked.data.gov.au/dataset/bdr/site/asm&gt;
+    tern:siteDescription """The Alice Springs Mulga flux station is located on ...""" ;
+.
+
+&lt;http://example.com/voc/habitats-extended&gt;
+	skos:hasTopConcept &lt;http://example.com/voc/habitats-extended/under-sea&gt; ;
+.
+
+&lt;http://example.com/voc/habitats-extended/under-sea&gt;
+    a skos:Concept ;
+    skos:prefLabel "Under Sea Habitat"@en ;
+    ...
+    skos:topConceptOf &lt;http://example.com/voc/habitats-extended&gt; ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the message above, two things in the BDR are updated: the Site <code>&lt;site/asm&gt;</code> - a new <code>tern:siteDescription</code> property is added - and the vocabulary <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a></code> - a new <code>skos:hasTopConcept</code> property is added and a new <code>skos:Concept</code>, <code><a href="http://example.com/voc/habitats-extended/under-sea" class="bare">http://example.com/voc/habitats-extended/under-sea</a></code>, is added.</p>
+</div>
+<div class="paragraph">
+<p>The response to the above message may be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:UpdateResponseMessage ;
+    dcterms:hasPart
+        &lt;site/asm&gt; ,
+		&lt;http://example.com/voc/habitats-extended&gt; ;
+.
+
+&lt;http://createme.org/abcdefghij&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:exists true ;
+.
+
+&lt;site/asm&gt;
+	bdrm:exists true ;
+.
+
+&lt;http://example.com/voc/habitats-extended&gt;
+	bdrm:exists true ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the response message above, the BDR confirms the creation of the client creation message <code><a href="http://createme.org/abcdefghij" class="bare">http://createme.org/abcdefghij</a></code> and the update of <code>&lt;site/asm&gt;</code> &amp; <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a></code> with existence conformations (<code>bdrm:exists true</code>) but does not indicate anything regarding the new <code>Concept</code>, <code><a href="http://example.com/voc/habitats-extended/under-sea" class="bare">http://example.com/voc/habitats-extended/under-sea</a></code>. While the <code>Concept</code> was addedd successfully, the success is only inferred from the fact that the update to the vocabulary indicated no error.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4040,7 +4185,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-03 06:34:21 UTC
+Last updated 2022-01-03 10:35:30 UTC
 </div>
 </div>
 </body>
