@@ -466,14 +466,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_index">4.1. Conformance Class Index</a></li>
 <li><a href="#_domain_model_conformance_class">4.2. Domain Model Conformance Class</a></li>
-<li><a href="#_abis_messages_conformance_class">4.3. ABIS Messages Conformance Class</a></li>
+<li><a href="#_bdr_messages_conformance_class">4.3. BDR Messages Conformance Class</a></li>
 </ul>
 </li>
 <li><a href="#_requirements">5. Requirements</a>
 <ul class="sectlevel2">
 <li><a href="#_requirements_index">5.1. Requirements Index</a></li>
 <li><a href="#_domain_model_conformance_class_requirements">5.2. Domain Model Conformance Class Requirements</a></li>
-<li><a href="#_abis_message_conformance_class_requirements">5.3. ABIS Message Conformance Class Requirements</a></li>
+<li><a href="#_bdr_message_conformance_class_requirements">5.3. BDR Message Conformance Class Requirements</a></li>
 </ul>
 </li>
 <li><a href="#_sources">6. Sources</a>
@@ -485,13 +485,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_abis_messaging_2">6.5. ABIS Messaging</a></li>
 </ul>
 </li>
-<li><a href="#_examples">7. Examples</a>
+<li><a href="#_examples">7. Examples</a></li>
+<li><a href="#_exists_messages">8. Exists Messages</a>
 <ul class="sectlevel2">
-<li><a href="#_sampling_position">7.1. Sampling Position</a></li>
-<li><a href="#_sample_alternate_identifiers_example">7.2. Sample alternate identifiers example</a></li>
+<li><a href="#_delete_messages">8.1. Delete Messages</a></li>
+<li><a href="#_create_messages">8.2. Create Messages</a></li>
+<li><a href="#_update_messages">8.3. Update Messages</a></li>
+<li><a href="#_sampling_position">8.4. Sampling Position</a></li>
+<li><a href="#_sample_alternate_identifiers_example">8.5. Sample alternate identifiers example</a></li>
 </ul>
 </li>
-<li><a href="#_references">8. References</a></li>
+<li><a href="#_references">9. References</a></li>
 </ul>
 </div>
 </div>
@@ -653,9 +657,34 @@ See that profile&#8217;s main document for details of the other profile parts an
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>abis:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/" class="bare">https://linked.data.gov.au/def/abis/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS namespace</strong> - for the Standard as a whole</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>req:</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Requirements namespace</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>cc:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Conformance Class namespace</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>aex:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/eg/" class="bare">https://linked.data.gov.au/def/abis/eg/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Canonical Examples namespace</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>ash:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/sh/" class="bare">https://linked.data.gov.au/def/abis/sh/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Validators Shapes namespace</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdrm:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/bdr-msg/" class="bare">https://linked.data.gov.au/def/bdr-msg/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Messages Ontology Namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
@@ -666,16 +695,6 @@ See that profile&#8217;s main document for details of the other profile parts an
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://example.com/thing" class="bare">http://example.com/thing</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nex:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/examples/" class="bare">https://linked.data.gov.au/def/abis/examples/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Canonical Examples namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nsh:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/abis/shape/" class="bare">https://linked.data.gov.au/def/abis/shape/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Validators Shapes namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
@@ -932,7 +951,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <p><a href="#_domain_model_conformance_class">Domain Model Conformance Class</a></p>
 </li>
 <li>
-<p><a href="#_abis_messages_conformance_class">ABIS Messages Conformance Class</a></p>
+<p><a href="#ABIS Messages Conformance Class">ABIS Messages Conformance Class</a></p>
 </li>
 </ul>
 </div>
@@ -971,7 +990,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect2">
-<h3 id="_abis_messages_conformance_class">4.3. ABIS Messages Conformance Class</h3>
+<h3 id="_bdr_messages_conformance_class">4.3. BDR Messages Conformance Class</h3>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 50%;">
@@ -986,7 +1005,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/abis-messages"><code>cc:abis-messages</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
@@ -1119,14 +1138,14 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </li>
 <li>
-<p><a href="#_abis_message_conformance_class_requirements">ABIS Message Conformance Class Requirements</a></p>
+<p><a href="#ABIS Message Conformance Class Requirements">ABIS Message Conformance Class Requirements</a></p>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="#_message_containing_new_observations">Message containing new Observations</a></p>
 </li>
 <li>
-<p><a href="#_message_containing_observation_to_be_deleted">Message containing Observation to be deleted</a></p>
+<p><a href="#Message containing Observation to be deleted">Message containing Observation to be deleted</a></p>
 </li>
 </ul>
 </div>
@@ -3189,7 +3208,32 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_abis_message_conformance_class_requirements">5.3. ABIS Message Conformance Class Requirements</h3>
+<h3 id="_bdr_message_conformance_class_requirements">5.3. BDR Message Conformance Class Requirements</h3>
+<div class="paragraph">
+<p>The <a href="https://linked.data.gov.au/def/bdr-msg:">BDR Messages Ontology</a> defines a general message class object, <code>bdrm:Message</code>, and four subclasses of it that are to be used to convey <em>create</em>, <em>update</em>, <em>delete</em> and <em>exists</em> (existance check) messages to the BDR. The following Requirements specify the required <em>structure</em> of BDRM messages only and not any requirements of Domain Model content with messages' payloads which is specified in the <em>Domain Model</em> above.</p>
+</div>
+<div class="paragraph">
+<p>When ABIS content is send to the the Biodiversity Data Repository, the BDR acts both as the storage of that content and also the authoratitive identifier creator for instances of certain classes of resources in that content, namely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>tern:Sampling</code></p>
+</li>
+<li>
+<p><code>tern:Sampling</code></p>
+</li>
+<li>
+<p><code>tern:Site</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and also instnaces of the BDR Message classes: <code>bdrm:createMessage</code>, <code>bdrm:UpdateMessage</code>, <code>bdrm:DeleteMessage</code> &amp; <code>bdrm:ExistsMessage</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>bdrm:CreateMessage</code> instances, used to create new content within the BDR, must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of those classes, so that the BDR can replace them with ones it issues. The client requesting new content creation will receive responses from the BDR that indicate what the BDR IRIs ultimately issued for the given placeholder IRI are. There are lots of examples of  <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> in use in the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a>.</p>
+</div>
 <div class="sect3">
 <h4 id="_message_containing_new_observations">5.3.1. Message containing new Observations</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
@@ -3230,7 +3274,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/abis-messages"><code>cc:abis-messages</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/abis-messages"><code>cc:bdr-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -3248,7 +3292,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_message_containing_observation_to_be_deleted">5.3.2. Message containing Observation to be deleted</h4>
+<h4 id="_message_part">5.3.2. Message Part</h4>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3263,31 +3307,21 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/message-delete-observations"><code>req:message-delete-observations</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/bdr-messages"><code>req:bdr-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message containing Observation to be deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Message part</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Instances of the ABIS Ontology&#8217;s <code>DeleteObservationsMessage</code> class <em>MUST</em> contain:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>a minimum of 1 RDFS Ontology <code>member</code> predicate indicating a SOSA Ontology <code>ObservationCollection</code> class instance;</p>
-</li>
-<li>
-<p>the SOSA Ontology <code>ObservationCollection</code> class instance must contain a minimum of 1 RDFS Ontology <code>member</code> predicate indcating an IRI of an existing TERN Ontology <code>Observation</code> class instance`.</p>
-</li>
-</ul>
+<p>ABIS messages must have at least one part, indicated with dcterms:hasPart</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/abis-messages"><code>cc:abis-messages</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
@@ -3295,11 +3329,111 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/shape/message-delete-observations-01"><code>nsh:message-delete-observations-01</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-msg-shapes"><code>https://linked.data.gov.au/def/bdr-msg-shapes</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01"><code>https://linked.data.gov.au/dataset/bdr/message/example-delete-valid-01</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_createmessage_createme_iris">5.3.3. CreateMessage Createme IRIs</h4>
+<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/create-createme"><code>req:create-createme</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CreateMessage Createme IRIs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>BDR CreateMessages instances must indicate parts with createme.org IRIs only</p>
+</div>
+<div class="paragraph">
+<p><em>All items requested to be created via a <code>bdrm:CreateMessage</code> must use the designated placeholder IRI namespace, <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code>, for instances of classes to be created whose authoratitive namespace is managed by the BDR system. This includes the classes <code>tern:Sampling</code>, <code>tern:Sampling</code> &amp; <code>tern:Site</code>.</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-msg-shapes"><code>https://linked.data.gov.au/def/bdr-msg-shapes</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_non_create_message_bdr_iris">5.3.4. Non-Create Message BDR IRIs</h4>
+<table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/req/non-create-iris"><code>req:non-create-iris</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CreateMessage Createme IRIs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>BDR Update, Delete &amp; Exists messages must indicate parts with BDR IRIs only.</p>
+</div>
+<div class="paragraph">
+<p><em>All items requested to be Updated, Deleted or have their existance checked must be indicated with IRIs starting <code><a href="https://linked.data.gov.au/dataset/bdr/" class="bare">https://linked.data.gov.au/dataset/bdr/</a></code>.</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis/conformanceclass/bdr-messages"><code>cc:bdr-messages</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Gateway Messaging</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bdr-msg-shapes"><code>https://linked.data.gov.au/def/bdr-msg-shapes</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Examples</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See the <a href="http://bdrgateway.surroundaustralia.com:">BDR Gateway</a>, <a href="#_create_messages">Create Messages</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3424,8 +3558,249 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="sect1">
 <h2 id="_examples">7. Examples</h2>
 <div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exists_messages">8. Exists Messages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to check the existance of an object, in this case, something with th IRI the <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> which can be inferred to be an instance of <code>tern:Site</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+
+
+&lt;http://createme.org/exists-2022-01-03-5432&gt;
+    a bdrm:ExistsMessage ;
+    dcterms:hasPart &lt;https://linked.data.gov.au/dataset/bdr/site/25&gt; ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The IRI of the message, <code><a href="http://createme.org/exists-2022-01-03-5432" class="bare">http://createme.org/exists-2022-01-03-5432</a></code> uses the placeholder namespace <code><a href="http://createme.org" class="bare">http://createme.org</a></code> and an ID part <code>exists-2022-01-03-5432</code> that presumably means something to the client.</p>
+</div>
+<div class="paragraph">
+<p>The thing checked is the IRI <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> which, as required for all existence check items, starts with the namespace of the BDR dataset, <code><a href="https://linked.data.gov.au/dataset/bdr" class="bare">https://linked.data.gov.au/dataset/bdr</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>If that object exists, the BDR may respond with the following <em>Exists Response Message</em>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:ExistsResponseMessage ;
+    dcterms:hasPart
+		&lt;http://createme.org/exists-2022-01-03-5432&gt; ,
+		&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt; ;
+.
+
+&lt;http://createme.org/exists-2022-01-03-5432&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;
+	a tern:Site ;
+	bdrm:exists true ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and also confirmed that the object <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> does exist and that it is of type <code>tern:Plot</code> which is a specialised subclass of <code>tern:Site</code>. We already knew it was of type <code>tern:Site</code> by <code>/site/</code> in the IRI but the BDR will indicate the most specialised type for an object.</p>
+</div>
+<div class="paragraph">
+<p>If the object does not exist, the BDR may respond with the following <em>Exists Response Message</em>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:ExistsResponseMessage ;
+    dcterms:hasPart
+		&lt;http://createme.org/exists-2022-01-03-5432&gt; ,
+		&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt; ;
+.
+
+&lt;http://createme.org/exists-2022-01-03-5432&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;
+	bdrm:exists false ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and confoirmed that the object <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> does <em>not</em> exist with <code>bdrm:exists false</code>. No typing information can be given for a non-existant object.</p>
+</div>
 <div class="sect2">
-<h3 id="_sampling_position">7.1. Sampling Position</h3>
+<h3 id="_delete_messages">8.1. Delete Messages</h3>
+<div class="paragraph">
+<p><em>TODO</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_messages">8.2. Create Messages</h3>
+<div class="paragraph">
+<p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to create a new instance of <code>tern:Sampling</code> within it. It necissarily creates an instance of <code>tern:Sample</code> too to record the outcome of the Sampling.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+@prefix tern: &lt;https://w3id.org/tern/ontologies/tern/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
+    a bdrm:CreateMessage ;
+    dcterms:hasPart
+        &lt;http://createme.org/2&gt; ,
+        &lt;http://createme.org/3&gt; ;
+.
+
+&lt;http://createme.org/2&gt;
+	a tern:Sampling ;
+    sosa:hasFeatureOfInterest &lt;site/tbjc&gt; ;
+    sosa:hasResult &lt;http://createme.org/3&gt; ;
+    sosa:resultTime "2022-01-03"^^xsd:date ;
+    sosa:usedProcedure &lt;http://example.com/procedure/x&gt; ;
+.
+
+&lt;http://createme.org/3&gt;
+	a tern:Sample ;
+    void:inDataset &lt;dataset/fake&gt; ;
+    sosa:isResultOf &lt;http://createme.org/2&gt; ;
+    sosa:isSampleOf &lt;site/tbjc&gt; ;
+    tern:featureType &lt;http://linked.data.gov.au/def/tern-cv/ecb855ed-50e1-4299-8491-861759ef40b7&gt; ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In code above, the BDR client <code>CreateMessage</code> object, <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code>, indicates the two things are to be created, the <code>tern:Sampling</code> instance, <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code> and the <code>tern:Sample</code> instance, <code><a href="http://createme.org/3" class="bare">http://createme.org/3</a></code>, with the predicate <code>dcterms:hasPart</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Placeholder IRIs can be anything starting with <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> so the IRI for the <code>CreateMessage</code> above <code>create-msg-2022-01-03-968574</code> means something to the client. The BDR will only use this <code>createme.org</code> ID part in its response message so that the client can know what BDR-issued IRI the BDR has allocated to that object.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>All the required properties of both the <code>tern:Sampling</code> &amp; <code>tern:Sample</code> instances, as specified by the <em>Domain Model</em> requirements, are present in this data. It is presumed here that the site <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc</a></code> (using the short form IRI <code>&lt;site/tbjc&gt;</code> in the data above) and the dataset <code><a href="https://linked.data.gov.au/dataset/bdr/dataset/fake" class="bare">https://linked.data.gov.au/dataset/bdr/dataset/fake</a></code> (<code>&lt;dataset/fake&gt;</code>) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.</p>
+</div>
+<div class="paragraph">
+<p>Validation of this message will return a <code>true</code> response and ingestion into the BDR will return a response similar to this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:IngestMessage ;
+    dcterms:hasPart
+        &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
+        &lt;http://createme.org/2&gt; ,
+        &lt;http://createme.org/3&gt; ;
+.
+
+&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;http://createme.org/2&gt;
+	owl:sameAs &lt;sampling/12345&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;http://createme.org/3&gt;
+	owl:sameAs &lt;sample/12346&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the code above, the message sent from the BDR system to the client in response to the client&#8217;s <em>create</em> message is identified with the IRI <code><a href="https://linked.data.gov.au/dataset/bdr/message/12347" class="bare">https://linked.data.gov.au/dataset/bdr/message/12347</a></code>, given in short form above as <code>&lt;message/12347&gt;</code>. The original message, which the client supplied with the placeholder identifier <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code> - the previous example - is shown to have been reidentified by the BDR as <code>&lt;message/12344&gt;</code>. Similarly, what the client identified as <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>, the BDR has reidentified as <code>&lt;sampling/12345&gt;</code> and what the client called <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code> the BDR has reidentified as <code>&lt;sample/12346&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>NOT: Since the BDR uses a monotonically increasing numberical identifier, in this example the BDR identifiers for the client message, the Sampling and Sample instances and the BDR&#8217;s reponse message are all sequential integers, <code>12344</code>, <code>12345</code>, <code>12346</code> &amp; <code>12347</code>. Such sequential numbering should <em>NOT</em> be relied on as the BDR may be handing multiple requests and issuing many numerical IDs which may appear out of order to clients.</p>
+</div>
+<div class="paragraph">
+<p>In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate <code>bdrm:ingestionStatus</code> indicating the object <code>bdrm:ingested</code> which is a term from a vocabulary of ingestion statuses within the BDR Messaging Ontology.</p>
+</div>
+<div class="paragraph">
+<p>If a part of the client&#8217;s message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, <code>&lt;site/xxx&gt;</code>, the BDR response message may look like like this:app-name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:IngestMessage ;
+    dcterms:hasPart
+        &lt;http://createme.org/create-msg-2022-01-03-968574&gt; ,
+        &lt;http://createme.org/2&gt; ,
+        &lt;http://createme.org/3&gt; ;
+.
+
+&lt;http://createme.org/create-msg-2022-01-03-968574&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;http://createme.org/2&gt;
+	owl:sameAs &lt;sampling/12345&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;http://createme.org/3&gt;
+	bdrm:ingestionStatus bdrm:not-ingested ;
+	bdrm:ingestionErrorMessage "This instance of tern:Sample cannot be ingested. The Feature of Interest indicate with sosa:isSampleOf (https://linked.data.gov.au/dataset/bdr/site/xxx) does not exist."
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the ingestion message above, the client message <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code> and its contained <code>tern:Sampling</code> instance, <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>, have been indested successfully but not the <code>tern:Sample</code> instance.</p>
+</div>
+<div class="paragraph">
+<p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identifiy with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_messages">8.3. Update Messages</h3>
+<div class="paragraph">
+<p><em>TODO</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sampling_position">8.4. Sampling Position</h3>
 <div class="paragraph">
 <p>From <a href="#_sampling_space_time_position">Sampling space &amp; time position</a>:</p>
 </div>
@@ -3501,7 +3876,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sample_alternate_identifiers_example">7.2. Sample alternate identifiers example</h3>
+<h3 id="_sample_alternate_identifiers_example">8.5. Sample alternate identifiers example</h3>
 <div class="paragraph">
 <p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
 </div>
@@ -3560,7 +3935,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="title">Note</div>
 </td>
 <td class="content">
-If an instance of <code>term:Sample`</code> is a <code>term:MaterialSample</code>, then any <code>dcterms:identifier</code> property supplied for it will be considered a <code>dwc:materialSampleID</code> property too.
+If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>, then any <code>dcterms:identifier</code> property supplied for it will be considered a <code>dwc:materialSampleID</code> property too.
 </td>
 </tr>
 </table>
@@ -3569,7 +3944,7 @@ If an instance of <code>term:Sample`</code> is a <code>term:MaterialSample</code
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">8. References</h2>
+<h2 id="_references">9. References</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -3589,7 +3964,7 @@ If an instance of <code>term:Sample`</code> is a <code>term:MaterialSample</code
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-23 04:03:04 UTC
+Last updated 2022-01-03 06:19:38 UTC
 </div>
 </div>
 </body>
