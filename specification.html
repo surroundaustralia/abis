@@ -485,17 +485,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_abis_messaging_2">6.5. ABIS Messaging</a></li>
 </ul>
 </li>
-<li><a href="#_examples">7. Examples</a></li>
-<li><a href="#_exists_messages">8. Exists Messages</a>
+<li><a href="#_examples">7. Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_delete_messages">8.1. Delete Messages</a></li>
-<li><a href="#_create_messages">8.2. Create Messages</a></li>
-<li><a href="#_update_messages">8.3. Update Messages</a></li>
-<li><a href="#_sampling_position">8.4. Sampling Position</a></li>
-<li><a href="#_sample_alternate_identifiers_example">8.5. Sample alternate identifiers example</a></li>
+<li><a href="#_exists_messages">7.1. Exists Messages</a></li>
+<li><a href="#_delete_messages">7.2. Delete Messages</a></li>
+<li><a href="#_create_messages">7.3. Create Messages</a></li>
+<li><a href="#_update_messages">7.4. Update Messages</a></li>
+<li><a href="#_sampling_position">7.5. Sampling Position</a></li>
+<li><a href="#_sample_alternate_identifiers_example">7.6. Sample alternate identifiers example</a></li>
 </ul>
 </li>
-<li><a href="#_references">9. References</a></li>
+<li><a href="#_references">8. References</a></li>
 </ul>
 </div>
 </div>
@@ -3558,12 +3558,8 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="sect1">
 <h2 id="_examples">7. Examples</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_exists_messages">8. Exists Messages</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exists_messages">7.1. Exists Messages</h3>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to check the existance of an object, in this case, something with th IRI the <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> which can be inferred to be an instance of <code>tern:Site</code>:</p>
 </div>
@@ -3646,14 +3642,94 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="paragraph">
 <p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and confoirmed that the object <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> does <em>not</em> exist with <code>bdrm:exists false</code>. No typing information can be given for a non-existant object.</p>
 </div>
+</div>
 <div class="sect2">
-<h3 id="_delete_messages">8.1. Delete Messages</h3>
+<h3 id="_delete_messages">7.2. Delete Messages</h3>
 <div class="paragraph">
-<p><em>TODO</em></p>
+<p>The following RDF data represents a minimalist <em>delete</em> message send to the Biodiversity Data Repository to delete an existing object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+
+&lt;http://createme.org/abcdefg&gt;
+    a bdrm:DeleteMessage ;
+    dcterms:hasPart
+        &lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt; ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>No content other than the message object, here <code><a href="http://createme.org/abcdefg" class="bare">http://createme.org/abcdefg</a></code>, and the predicate <code>dcterms:hasPart</code> indicating the things to delete, here <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc&gt" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc&gt</a>;</code>.</p>
+</div>
+<div class="paragraph">
+<p>Multiple things may be deleted with multiple values for <code>dcterms:hasPart</code>.</p>
+</div>
+<div class="paragraph">
+<p>A response message from the server, a <code>dbrm:DeleteResponseMessage</code>, could look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:DeleteResponseMessage ;
+    dcterms:hasPart
+		&lt;http://createme.org/abcdefg&gt; ,
+		&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt; ;
+.
+
+&lt;http://createme.org/abcdefg&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;
+	bdrm:exists false ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the initial <code>bdrm:DeleteMessage</code> from the client has been stored by the server with IRI <code>&lt;message/12344&gt;</code> and the object that was requested to be deleted <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc</a></code>, is indicated as not existing.</p>
+</div>
+<div class="paragraph">
+<p>If a non-existent object was requested for deletion, the response message would still indicate <code>bdrm:exists false</code> since it doesn&#8217;t exist.</p>
+</div>
+<div class="paragraph">
+<p>If an object that the client is not allowed to delete is requested for deletion, an error message like the following may be sent by the BDR:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix bdrm: &lt;https://linked.data.gov.au/def/bdr-msg/&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@base &lt;https://linked.data.gov.au/dataset/bdr/&gt; .
+
+&lt;message/12347&gt;
+    a bdrm:DeleteResponseMessage ;
+    dcterms:hasPart
+		&lt;http://createme.org/abcdefg&gt; ,
+		&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt; ;
+.
+
+&lt;http://createme.org/abcdefg&gt;
+	owl:sameAs &lt;message/12344&gt; ;
+	bdrm:ingestionStatus bdrm:ingested ;
+.
+
+&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;
+	bdrm:exists true ;
+	bdrm:clientMessageError "This instance of tern:Site may not be deleted by this client. The client does not have sufficient privileges" ;
+.</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_messages">8.2. Create Messages</h3>
+<h3 id="_create_messages">7.3. Create Messages</h3>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to create a new instance of <code>tern:Sampling</code> within it. It necissarily creates an instance of <code>tern:Sample</code> too to record the outcome of the Sampling.</p>
 </div>
@@ -3729,17 +3805,17 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 
 &lt;http://createme.org/create-msg-2022-01-03-968574&gt;
 	owl:sameAs &lt;message/12344&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;http://createme.org/2&gt;
 	owl:sameAs &lt;sampling/12345&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .
 
 &lt;http://createme.org/3&gt;
 	owl:sameAs &lt;sample/12346&gt; ;
-	bdrm:ingestionStatus bdrm:ingested ;
+	bdrm:exists true ;
 .</code></pre>
 </div>
 </div>
@@ -3750,7 +3826,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 <p>NOT: Since the BDR uses a monotonically increasing numberical identifier, in this example the BDR identifiers for the client message, the Sampling and Sample instances and the BDR&#8217;s reponse message are all sequential integers, <code>12344</code>, <code>12345</code>, <code>12346</code> &amp; <code>12347</code>. Such sequential numbering should <em>NOT</em> be relied on as the BDR may be handing multiple requests and issuing many numerical IDs which may appear out of order to clients.</p>
 </div>
 <div class="paragraph">
-<p>In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate <code>bdrm:ingestionStatus</code> indicating the object <code>bdrm:ingested</code> which is a term from a vocabulary of ingestion statuses within the BDR Messaging Ontology.</p>
+<p>In this example, the client message, Sampling and Sample instances were all ingested successfully, as indicated by the predicate <code>bdrm:exists</code> indicating the object now exists in the BDR.</p>
 </div>
 <div class="paragraph">
 <p>If a part of the client&#8217;s message was not able to be ingested, perhaps the Sample instance indicated a non-existet Feature of Interest, <code>&lt;site/xxx&gt;</code>, the BDR response message may look like like this:app-name:</p>
@@ -3781,8 +3857,8 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 .
 
 &lt;http://createme.org/3&gt;
-	bdrm:ingestionStatus bdrm:not-ingested ;
-	bdrm:ingestionErrorMessage "This instance of tern:Sample cannot be ingested. The Feature of Interest indicate with sosa:isSampleOf (https://linked.data.gov.au/dataset/bdr/site/xxx) does not exist."
+	bdrm:exists false ;
+	bdrm:clientMessageError "This instance of tern:Sample cannot be ingested. The Feature of Interest indicate with sosa:isSampleOf (https://linked.data.gov.au/dataset/bdr/site/xxx) does not exist."
 .</code></pre>
 </div>
 </div>
@@ -3794,13 +3870,13 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="sect2">
-<h3 id="_update_messages">8.3. Update Messages</h3>
+<h3 id="_update_messages">7.4. Update Messages</h3>
 <div class="paragraph">
 <p><em>TODO</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sampling_position">8.4. Sampling Position</h3>
+<h3 id="_sampling_position">7.5. Sampling Position</h3>
 <div class="paragraph">
 <p>From <a href="#_sampling_space_time_position">Sampling space &amp; time position</a>:</p>
 </div>
@@ -3876,7 +3952,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sample_alternate_identifiers_example">8.5. Sample alternate identifiers example</h3>
+<h3 id="_sample_alternate_identifiers_example">7.6. Sample alternate identifiers example</h3>
 <div class="paragraph">
 <p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
 </div>
@@ -3944,7 +4020,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">9. References</h2>
+<h2 id="_references">8. References</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -3964,7 +4040,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-03 06:19:38 UTC
+Last updated 2022-01-03 06:34:21 UTC
 </div>
 </div>
 </body>
