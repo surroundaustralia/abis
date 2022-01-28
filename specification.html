@@ -487,15 +487,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_examples">7. Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_exists_messages">7.1. Exists Messages</a></li>
-<li><a href="#_delete_messages">7.2. Delete Messages</a></li>
-<li><a href="#_create_messages">7.3. Create Messages</a></li>
-<li><a href="#_update_messages">7.4. Update Messages</a></li>
-<li><a href="#_sampling_position">7.5. Sampling Position</a></li>
-<li><a href="#_sample_alternate_identifiers_example">7.6. Sample alternate identifiers example</a></li>
+<li><a href="#_bdr_messages">7.1. BDR Messages</a></li>
+<li><a href="#_domain_model">7.2. Domain Model</a></li>
+<li><a href="#_sampling_position">7.3. Sampling Position</a></li>
 </ul>
 </li>
 <li><a href="#_references">8. References</a></li>
+<li><a href="#_annex_a_bdr_message_interactions">Annex A: BDR Message Interactions</a>
+<ul class="sectlevel2">
+<li><a href="#_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</a></li>
+<li><a href="#_a_2_following_message_absorbtion_progress">A.2 Following message absorbtion progress</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -718,7 +721,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tern:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/sosa/" class="bare">http://www.w3.org/ns/sosa/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/tern/ontologies/tern/" class="bare">https://w3id.org/tern/ontologies/tern/</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology namespace</p></td>
 </tr>
 <tr>
@@ -846,7 +849,7 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="sect2">
 <h3 id="_identifier">3.1. Identifier</h3>
 <div class="paragraph">
-<p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
+<p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <code>&lt;https://linked.data.gov.au/def/abis/req/&gt;</code> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
 </div>
 <div class="paragraph">
 <p>The IRI namespace plus the number make the complete IRI of the <em>requirement</em>.</p>
@@ -3559,9 +3562,31 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <h2 id="_examples">7. Examples</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_exists_messages">7.1. Exists Messages</h3>
+<h3 id="_bdr_messages">7.1. BDR Messages</h3>
 <div class="paragraph">
-<p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to check the existance of an object, in this case, something with th IRI the <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> which can be inferred to be an instance of <code>tern:Site</code>:</p>
+<p>This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The BDR uses the <a href="https://www.linked.data.gov.au">Australian Government Linked Data Working Group</a>-issued persistent identifier <code>https://linked.data.gov.au/dataset/bdr</code> for all of the content for which it is the authoritive store. Other ABIS-conformant systems will necissarily use other PIDs, so these examples, if taken for direcion with other systems, will need to substitute that PID for others.</p>
+</div>
+<div class="paragraph">
+<p>The <code>http://createme.org</code> IRI used is a data placholder - a token - with no meaning other than for system identification and it may be reused by other systems.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_exists_messages">7.1.1. Exists Messages</h4>
+<div class="paragraph">
+<p>The following RDF data represents a minimalist <em>create</em> message send to the BDR to check the existance of an object, in this case, something with th IRI the <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> which can be inferred to be an instance of <code>tern:Site</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3576,10 +3601,10 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>The IRI of the message, <code><a href="http://createme.org/exists-2022-01-03-5432" class="bare">http://createme.org/exists-2022-01-03-5432</a></code> uses the placeholder namespace <code><a href="http://createme.org" class="bare">http://createme.org</a></code> and an ID part <code>exists-2022-01-03-5432</code> that presumably means something to the client.</p>
+<p>The IRI of the message, <code>&lt;http://createme.org/exists-2022-01-03-5432&gt;</code> uses the placeholder namespace <code>http://createme.org</code> and an ID part <code>exists-2022-01-03-5432</code> that presumably means something to the client.</p>
 </div>
 <div class="paragraph">
-<p>The thing checked is the IRI <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> which, as required for all existence check items, starts with the namespace of the BDR dataset, <code><a href="https://linked.data.gov.au/dataset/bdr" class="bare">https://linked.data.gov.au/dataset/bdr</a></code>.</p>
+<p>The thing checked is the IRI <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> which, as required for all existence check items, starts with the namespace of the BDR dataset, <code>https://linked.data.gov.au/dataset/bdr</code>.</p>
 </div>
 <div class="paragraph">
 <p>If that object exists, the BDR may respond with the following <em>Exists Response Message</em>:</p>
@@ -3610,7 +3635,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and also confirmed that the object <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> does exist and that it is of type <code>tern:Plot</code> which is a specialised subclass of <code>tern:Site</code>. We already knew it was of type <code>tern:Site</code> by <code>/site/</code> in the IRI but the BDR will indicate the most specialised type for an object.</p>
+<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and also confirmed that the object <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> does exist and that it is of type <code>tern:Plot</code> which is a specialised subclass of <code>tern:Site</code>. We already knew it was of type <code>tern:Site</code> by <code>/site/</code> in the IRI but the BDR will indicate the most specialised type for an object.</p>
 </div>
 <div class="paragraph">
 <p>If the object does not exist, the BDR may respond with the following <em>Exists Response Message</em>:</p>
@@ -3640,11 +3665,11 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and confoirmed that the object <code><a href="https://linked.data.gov.au/dataset/bdr/site/25" class="bare">https://linked.data.gov.au/dataset/bdr/site/25</a></code> does <em>not</em> exist with <code>bdrm:exists false</code>. No typing information can be given for a non-existant object.</p>
+<p>Here the BDR has ingested the Exists client message and issued it an ID, <code>&lt;message/12344&gt;</code> and confoirmed that the object <code>&lt;https://linked.data.gov.au/dataset/bdr/site/25&gt;</code> does <em>not</em> exist with <code>bdrm:exists false</code>. No typing information can be given for a non-existant object.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_delete_messages">7.2. Delete Messages</h3>
+<div class="sect3">
+<h4 id="_delete_messages">7.1.2. Delete Messages</h4>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>delete</em> message send to the Biodiversity Data Repository to delete an existing object:</p>
 </div>
@@ -3661,7 +3686,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>No content other than the message object, here <code><a href="http://createme.org/abcdefg" class="bare">http://createme.org/abcdefg</a></code>, and the predicate <code>dcterms:hasPart</code> indicating the things to delete, here <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc&gt" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc&gt</a>;</code>.</p>
+<p>No content other than the message object, here <code>&lt;http://createme.org/abcdefg&gt;</code>, and the predicate <code>dcterms:hasPart</code> indicating the things to delete, here <code>https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;</code>.</p>
 </div>
 <div class="paragraph">
 <p>Multiple things may be deleted with multiple values for <code>dcterms:hasPart</code>.</p>
@@ -3694,7 +3719,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>Here the initial <code>bdrm:DeleteMessage</code> from the client has been stored by the server with IRI <code>&lt;message/12344&gt;</code> and the object that was requested to be deleted <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc</a></code>, is indicated as not existing.</p>
+<p>Here the initial <code>bdrm:DeleteMessage</code> from the client has been stored by the server with IRI <code>&lt;message/12344&gt;</code> and the object that was requested to be deleted <code>&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;</code>, is indicated as not existing.</p>
 </div>
 <div class="paragraph">
 <p>If a non-existent object was requested for deletion, the response message would still indicate <code>bdrm:exists false</code> since it doesn&#8217;t exist.</p>
@@ -3728,8 +3753,8 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_create_messages">7.3. Create Messages</h3>
+<div class="sect3">
+<h4 id="_create_messages">7.1.3. Create Messages</h4>
 <div class="paragraph">
 <p>The following RDF data represents a minimalist <em>create</em> message send to the Biodiversity Data Repository to create a new instance of <code>tern:Sampling</code> within it. It necissarily creates an instance of <code>tern:Sample</code> too to record the outcome of the Sampling.</p>
 </div>
@@ -3769,7 +3794,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </div>
 </div>
 <div class="paragraph">
-<p>In code above, the BDR client <code>CreateMessage</code> object, <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code>, indicates the two things are to be created, the <code>tern:Sampling</code> instance, <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code> and the <code>tern:Sample</code> instance, <code><a href="http://createme.org/3" class="bare">http://createme.org/3</a></code>, with the predicate <code>dcterms:hasPart</code>.</p>
+<p>In code above, the BDR client <code>CreateMessage</code> object, <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code>, indicates the two things are to be created, the <code>tern:Sampling</code> instance, <code>&lt;http://createme.org/2&gt;</code> and the <code>tern:Sample</code> instance, <code>&lt;http://createme.org/3&gt;</code>, with the predicate <code>dcterms:hasPart</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3778,13 +3803,13 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <div class="title">Note</div>
 </td>
 <td class="content">
-Placeholder IRIs can be anything starting with <code><a href="http://createme.org/" class="bare">http://createme.org/</a></code> so the IRI for the <code>CreateMessage</code> above <code>create-msg-2022-01-03-968574</code> means something to the client. The BDR will only use this <code>createme.org</code> ID part in its response message so that the client can know what BDR-issued IRI the BDR has allocated to that object.
+Placeholder IRIs can be anything starting with <code>http://createme.org/</code> so the IRI for the <code>CreateMessage</code> above <code>create-msg-2022-01-03-968574</code> means something to the client. The BDR will only use this <code>createme.org</code> ID part in its response message so that the client can know what BDR-issued IRI the BDR has allocated to that object.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>All the required properties of both the <code>tern:Sampling</code> &amp; <code>tern:Sample</code> instances, as specified by the <em>Domain Model</em> requirements, are present in this data. It is presumed here that the site <code><a href="https://linked.data.gov.au/dataset/bdr/site/tbjc" class="bare">https://linked.data.gov.au/dataset/bdr/site/tbjc</a></code> (using the short form IRI <code>&lt;site/tbjc&gt;</code> in the data above) and the dataset <code><a href="https://linked.data.gov.au/dataset/bdr/dataset/fake" class="bare">https://linked.data.gov.au/dataset/bdr/dataset/fake</a></code> (<code>&lt;dataset/fake&gt;</code>) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.</p>
+<p>All the required properties of both the <code>tern:Sampling</code> &amp; <code>tern:Sample</code> instances, as specified by the <em>Domain Model</em> requirements, are present in this data. It is presumed here that the site <code>&lt;https://linked.data.gov.au/dataset/bdr/site/tbjc&gt;</code> (using the short form IRI <code>&lt;site/tbjc&gt;</code> in the data above) and the dataset <code>&lt;https://linked.data.gov.au/dataset/bdr/dataset/fake&gt;</code> (<code>&lt;dataset/fake&gt;</code>) are present in the BDR. Their existence is not checked by message validation but by ingest procedures.</p>
 </div>
 <div class="paragraph">
 <p>Validation of this message will return <code>true</code> and creation of its content in the BDR will return a response similar to this:</p>
@@ -3821,7 +3846,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="paragraph">
-<p>In the code above, the message sent from the BDR system to the client in response to the client&#8217;s <em>create</em> message is identified with the IRI <code><a href="https://linked.data.gov.au/dataset/bdr/message/12347" class="bare">https://linked.data.gov.au/dataset/bdr/message/12347</a></code>, given in short form above as <code>&lt;message/12347&gt;</code>. The original message, which the client supplied with the placeholder identifier <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code> - the previous example - is shown to have been reidentified by the BDR as <code>&lt;message/12344&gt;</code>. Similarly, what the client identified as <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>, the BDR has reidentified as <code>&lt;sampling/12345&gt;</code> and what the client called <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code> the BDR has reidentified as <code>&lt;sample/12346&gt;</code>.</p>
+<p>In the code above, the message sent from the BDR system to the client in response to the client&#8217;s <em>create</em> message is identified with the IRI <code>&lt;https://linked.data.gov.au/dataset/bdr/message/12347&gt;</code>, given in short form above as <code>&lt;message/12347&gt;</code>. The original message, which the client supplied with the placeholder identifier <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code> - the previous example - is shown to have been reidentified by the BDR as <code>&lt;message/12344&gt;</code>. Similarly, what the client identified as <code>&lt;http://createme.org/2&gt;</code>, the BDR has reidentified as <code>&lt;sampling/12345&gt;</code> and what the client called <code>&lt;http://createme.org/2&gt;</code> the BDR has reidentified as <code>&lt;sample/12346&gt;</code>.</p>
 </div>
 <div class="paragraph">
 <p>NOT: Since the BDR uses a monotonically increasing numberical identifier, in this example the BDR identifiers for the client message, the Sampling and Sample instances and the BDR&#8217;s reponse message are all sequential integers, <code>12344</code>, <code>12345</code>, <code>12346</code> &amp; <code>12347</code>. Such sequential numbering should <em>NOT</em> be relied on as the BDR may be handing multiple requests and issuing many numerical IDs which may appear out of order to clients.</p>
@@ -3864,13 +3889,13 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="paragraph">
-<p>In the creation message above, the client message <code><a href="http://createme.org/create-msg-2022-01-03-968574" class="bare">http://createme.org/create-msg-2022-01-03-968574</a></code> and its contained <code>tern:Sampling</code> instance, <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>, have been indested successfully but not the <code>tern:Sample</code> instance.</p>
+<p>In the creation message above, the client message <code>&lt;http://createme.org/create-msg-2022-01-03-968574&gt;</code> and its contained <code>tern:Sampling</code> instance, <code>&lt;http://createme.org/2&gt;</code>, have been indested successfully but not the <code>tern:Sample</code> instance.</p>
 </div>
 <div class="paragraph">
-<p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identifiy with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code><a href="http://createme.org/2" class="bare">http://createme.org/2</a></code>.</p>
+<p>After receiveing this message, the client <em>SHOULD</em> send an update message to the BDR to update the <code>tern:Sampling</code> instance with corrected <code>tern:Sample</code> information, which it <em>MUST</em> identifiy with the BDR-issued IRI <code>&lt;sampling/12345&gt;</code>, and <em>NOT</em> it&#8217;s original IRI for it <code>&lt;http://createme.org/2&gt;</code>.</p>
 </div>
-<div class="sect3">
-<h4 id="_creating_non_bdr_objects">7.3.1. Creating non-BDR objects</h4>
+<div class="sect4">
+<h5 id="_creating_non_bdr_objects">Creating non-BDR objects</h5>
 <div class="paragraph">
 <p>The following RDF data adds an externally-defined vocabulary to the BDR:</p>
 </div>
@@ -3914,7 +3939,7 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="paragraph">
-<p>In the message above, the <code>CreaeMessage</code> only refers to the <code>ConceptScheme</code> instance added to the BDR, not each of its contained <code>Concept</code> instances. The alead-defined IRI of the <code>ConceptScheme</code> is given - not a <code><a href="http://createme.org" class="bare">http://createme.org</a></code> IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.</p>
+<p>In the message above, the <code>CreaeMessage</code> only refers to the <code>ConceptScheme</code> instance added to the BDR, not each of its contained <code>Concept</code> instances. The alead-defined IRI of the <code>ConceptScheme</code> is given - not a <code>http://createme.org</code> IRI - so this object, as long as it passes BDR validation, will be ingested and stored in the BDR as-is, with no IRI changes.</p>
 </div>
 <div class="paragraph">
 <p>The BDR may erspond to this sort of message with the following:</p>
@@ -3944,12 +3969,12 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 </div>
 </div>
 <div class="paragraph">
-<p>In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, <code>&lt;message/12344&gt;</code>. It also confirms the existence within it of the vocabulary with <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a> bdrm:exists true</code>.</p>
+<p>In the response message above, the BDR confirms creation of the create message and gives it a BDR IRI, <code>&lt;message/12344&gt;</code>. It also confirms the existence within it of the vocabulary with <code>&lt;http://example.com/voc/habitats-extended&gt;</code> <code>bdrm:exists true</code>.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_update_messages">7.4. Update Messages</h3>
+<div class="sect3">
+<h4 id="_update_messages">7.1.4. Update Messages</h4>
 <div class="paragraph">
 <p>An update message sent to the BDR can update any item that the client has permission to update - BRD-managed things like Sites &amp; Samples or other things like vocabularies. An update message might look like this:</p>
 </div>
@@ -4020,8 +4045,15 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 <p>In the response message above, the BDR confirms the creation of the client creation message <code><a href="http://createme.org/abcdefghij" class="bare">http://createme.org/abcdefghij</a></code> and the update of <code>&lt;site/asm&gt;</code> &amp; <code><a href="http://example.com/voc/habitats-extended" class="bare">http://example.com/voc/habitats-extended</a></code> with existence conformations (<code>bdrm:exists true</code>) but does not indicate anything regarding the new <code>Concept</code>, <code><a href="http://example.com/voc/habitats-extended/under-sea" class="bare">http://example.com/voc/habitats-extended/under-sea</a></code>. While the <code>Concept</code> was addedd successfully, the success is only inferred from the fact that the update to the vocabulary indicated no error.</p>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="_sampling_position">7.5. Sampling Position</h3>
+<h3 id="_domain_model">7.2. Domain Model</h3>
+<div class="paragraph">
+<p>These examples extend on those of the domain ontology provided in the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">TERN Ontology&#8217;s examples</a>. These examples are for non-core domain model (TERN Ontology) converns whcih are nevertheless useful or required for the Biodiversity Data Repository or other ABIS-conformant datasets.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sampling_position">7.3. Sampling Position</h3>
 <div class="paragraph">
 <p>From <a href="#_sampling_space_time_position">Sampling space &amp; time position</a>:</p>
 </div>
@@ -4095,9 +4127,8 @@ Placeholder IRIs can be anything starting with <code><a href="http://createme.or
 .</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_sample_alternate_identifiers_example">7.6. Sample alternate identifiers example</h3>
+<div class="sect3">
+<h4 id="_sample_alternate_identifiers_example">7.3.1. Sample alternate identifiers example</h4>
 <div class="paragraph">
 <p>From <a href="#_sample_alternate_identifiers">Sample alternate identifiers</a>:</p>
 </div>
@@ -4164,6 +4195,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="_references">8. References</h2>
 <div class="sectionbody">
@@ -4176,6 +4208,29 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_annex_a_bdr_message_interactions">Annex A: BDR Message Interactions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_messages">BDR Messages</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</h3>
+<div class="paragraph">
+<p>Messages sent to the BDR ard sent via HTTP POST to the BDR&#8217;s <em>gateway</em>, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>http://linked.data.gov.au/dataset/bdr/message&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
+</div>
+<div class="paragraph">
+<p>The message&#8217;s persistent identifier is replated back to the client system sending the message to the BDR which the client can then use to check progress of the message&#8217;s absorbtion into the BDR, see the next section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_2_following_message_absorbtion_progress">A.2 Following message absorbtion progress</h3>
+<div class="paragraph">
+<p>Using the persistent identifier of a</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footnotes">
 <hr>
@@ -4185,7 +4240,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-03 10:35:30 UTC
+Last updated 2022-01-28 04:37:40 UTC
 </div>
 </div>
 </body>
