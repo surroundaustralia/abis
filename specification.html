@@ -4214,19 +4214,295 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 <div class="paragraph">
 <p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_messages">BDR Messages</a>.</p>
 </div>
+<div class="paragraph">
+<p>All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at <a href="https://gateway.bdr.gov.au" class="bare">https://gateway.bdr.gov.au</a>.</p>
+</div>
 <div class="sect2">
 <h3 id="_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</h3>
 <div class="paragraph">
-<p>Messages sent to the BDR ard sent via HTTP POST to the BDR&#8217;s <em>gateway</em>, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>http://linked.data.gov.au/dataset/bdr/message&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
+<p>Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>http://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
 </div>
 <div class="paragraph">
-<p>The message&#8217;s persistent identifier is replated back to the client system sending the message to the BDR which the client can then use to check progress of the message&#8217;s absorbtion into the BDR, see the next section.</p>
+<p>The BDR Gateway replies to a client sending a message with the message&#8217;s persistent identifier. This PID can then be used to check progress of the message&#8217;s absorbtion into the BDR, see the next section.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR <code>site</code>, <code>Sampling</code>, <code>Observation</code> &amp; <code>Sample</code> instances, messages sent to the BDR are not public. This means you cannot just laod a message&#8217;s PID into a web browser and be taken to a representation of that message.</p>
+</div>
+<div class="paragraph">
+<p>I.e., IRIs of the form <code>http://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> do not resolve, by design.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_a_2_following_message_absorbtion_progress">A.2 Following message absorbtion progress</h3>
+<div class="sect3">
+<h4 id="_a_2_1_bdr_gateway_status_endpoint">A.2.1 BDR Gateway status endpoint</h4>
 <div class="paragraph">
-<p>Using the persistent identifier of a</p>
+<p>Using the persistent identifier of a message, you can track the status of that message regarding it&#8217;s absorbtion into the BDR by using the BDR Gateway&#8217;s message status endpoint, <code>/status</code>, which is online at <code>https://gateway.bdr.gov.au/status</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+In the development phase of the BDR, the BDR Gateway is online at <a href="http://bdrgateway.surroundaustralia.com" class="bare">http://bdrgateway.surroundaustralia.com</a>, thus the status endpoint is <a href="http://bdrgateway.surroundaustralia.com/status" class="bare">http://bdrgateway.surroundaustralia.com/status</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The BDR Gateway&#8217;s status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI <code>http://linked.data.gov.au/dataset/bdr/message/1234</code> may be requested like so:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://bdrgateway.surroundaustralia.com/status?iri=http://linked.data.gov.au/dataset/bdr/message/1234" class="bare">http://bdrgateway.surroundaustralia.com/status?iri=http://linked.data.gov.au/dataset/bdr/message/1234</a></p>
+</div>
+<div class="paragraph">
+<p>The responses that the BDR Gateway will provide are RDF messages based on the statuses in the next section.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_a_2_2_message_statuses">A.2.2 Message statuses</h4>
+<div class="paragraph">
+<p>The table below indicates the statuses of messages sent to the BDR.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Messages submitted to the BDR Gateway only have their status tracked <em>after</em> they are calculated to be valid according to the Gateway&#8217;s SHACL validators (see <a href="http://bdrgateway.surroundaustralia.com/validators" class="bare">http://bdrgateway.surroundaustralia.com/validators</a>). This means there is no status for "not valid" or even "valid": not valid messages are indecated as such on submission and valid messages are assigned a persistent identifier (PID) which is then used for status tracking.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-none grid-none stripes-even stretch">
+<caption class="title">Table 1. Message statuses</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>submitted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message has been submitted to tbe BDR via the BDR Gateway and has passed validation and had a persistent IRI assigned to it, but not yet processed further</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>duplicate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an <code>owl:sameAs</code> property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nonduplicate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message has passed duplication analysis (i.e. it is not considered a duplicate)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>badvalues</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix <code>dbrm:doesNotConformTo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>goodvalues</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>staged</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message is stored in the Staging BDR environment ready for synchronisation to the Live environment</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notlive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message is not able to progress from Staging to Live for reason(s) given with the prefix <code>bdrm:statusMessage</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>live</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message is fully processed and available in the Live BDR environment</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that any object with a status of <code>live</code> will also have the property <code>bdrm:exists</code> and a boolean value of <code>true</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_a_2_3_message_status_state_diagram">A.2.3 Message status state diagram</h4>
+<div class="paragraph">
+<p>The following figure shows the state diagram used to indicate allowed message transitions between statues.</p>
+</div>
+<div id="status-state-diagram" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/abis//img/statuses-state-diagram.png" alt="Message statuses state diagram">
+</div>
+<div class="title">Figure 3. Message statuses state diagram</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The states of <code>duplicate</code> and <code>badvalues</code> are terminal: a message cannot progress from these states to any other</p>
+</li>
+<li>
+<p><code>submitted</code> will progress to either <code>duplicate</code> or <code>nonduplicate</code> when it passes or failes duplication testing</p>
+</li>
+<li>
+<p><code>nonduplicate</code> will progress to either <code>goodvalues</code> or <code>badvalues</code> when it passes or failes values testing</p>
+</li>
+<li>
+<p><code>goodvalues</code> will progress to either <code>staged</code> or <code>notstaged</code> when it is loaded into the BDR&#8217;s Staging environment</p>
+</li>
+<li>
+<p>messages in state <code>notstaged</code> may progress to <code>staged</code> if system actions allow it to be staged, e.g. a system failure os overcome</p>
+</li>
+<li>
+<p><code>staged</code> will progress to either <code>live</code> or <code>notlive</code> when it is loaded into the BDR&#8217;s Live environment</p>
+</li>
+<li>
+<p>messages in state <code>notlive</code> may progress to <code>live</code> if system actions allow it to be staged, e.g. a system failure os overcome</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_a_2_4_message_status_rdf">A.2.4 Message status RDF</h4>
+<div class="paragraph">
+<p>Each status is formally defined within the <em>Message Statuses</em> vocabulary which is part of the <em>BDR Messages Ontology</em> used to characterise messages within the BDR. The vocabulary&#8217;s concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs.</p>
+</div>
+<div class="paragraph">
+<p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/submitted</code>. This may be contracted to <code>bdrm:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
+</div>
+<div class="paragraph">
+<p>Following are a list of per-status RDF examples, all of which use the dummy message IRI of <code>http://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>http://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>submitted</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:submitted ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>duplicate</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:duplicate ;
+    owl:sameAs &lt;message/54321&gt; ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The message <code>&lt;message/1234&gt;</code> has been determined to be a duplicate of <code>&lt;message/54321&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>nonduplicate</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notduplicate ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>badvalues</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:badvalues ;
+    dbrm:doesNotConformTo
+        req:ValuesReqK ,
+        req:ValuesReqM ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The message <code>&lt;message/1234&gt;</code> has failed message values tests for Requirements <code>req:ValuesReqK</code> &amp; <code>req:ValuesReqM</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>goodvalues</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:goodvalues ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>notstaged</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notstaged ;
+    bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The message <code>&lt;message/1234&gt;</code> is not able to be staged due to the reason given in the <code>bdrm:statusMessage</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>staged</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:staged ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>notlive</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notlive ;
+    bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The message <code>&lt;message/1234&gt;</code> is not able to be made live due to the reason given in the <code>bdrm:statusMessage</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>live</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:live ;</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -4240,7 +4516,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-28 04:37:40 UTC
+Last updated 2022-01-31 11:15:57 UTC
 </div>
 </div>
 </body>
