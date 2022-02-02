@@ -4386,7 +4386,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/submitted</code>. This may be contracted to <code>bdrm:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
 </div>
 <div class="paragraph">
-<p>Following are a list of per-status RDF examples, all of which use the dummy message IRI of <code>http://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>http://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
+<p>Following are a list of per-status RDF examples, all of which use an IRI of <code>http://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>http://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
 </div>
 <div class="paragraph">
 <p><code>submitted</code>:</p>
@@ -4503,6 +4503,30 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
     bdrm:absorbtionStatus bdrm:live ;</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>For messages other than <code>bdrm:CreateMessage</code> instances, the responses are similar. For example, for a deletion message with IRI <code>&lt;message/5678&gt;</code> that has failed to propagate to the <code>live</code> environment, you may have a status of:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
+    a bdrm:DeleteMessage ;
+    bdrm:absorbtionStatus bdrm:notlive ;
+    bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For permissions and similar violations, the absorbtion process will fail at the values stage, thus a status of <code>badvalues</code> will be given with a relevant error message, for example a client attempting to delete a <code>tern:Site</code> that they dn&#8217;t have editor permissions for may see this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
+    a bdrm:DeleteMessage ;
+    bdrm:absorbtionStatus bdrm:badvalues ;
+    bdrm:statusMessage "You do not have permission to delete that resource"
+.</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -4516,7 +4540,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-31 11:15:57 UTC
+Last updated 2022-02-02 04:44:39 UTC
 </div>
 </div>
 </body>
