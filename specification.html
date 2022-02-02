@@ -4220,7 +4220,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 <div class="sect2">
 <h3 id="_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</h3>
 <div class="paragraph">
-<p>Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>http://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
+<p>Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
 </div>
 <div class="paragraph">
 <p>The BDR Gateway replies to a client sending a message with the message&#8217;s persistent identifier. This PID can then be used to check progress of the message&#8217;s absorbtion into the BDR, see the next section.</p>
@@ -4236,7 +4236,7 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 <p>Persistent Identifiers created for messages by the BDR use the same namespace as other BDR objects however unlike many BDR <code>site</code>, <code>Sampling</code>, <code>Observation</code> &amp; <code>Sample</code> instances, messages sent to the BDR are not public. This means you cannot just laod a message&#8217;s PID into a web browser and be taken to a representation of that message.</p>
 </div>
 <div class="paragraph">
-<p>I.e., IRIs of the form <code>http://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> do not resolve, by design.</p>
+<p>I.e., IRIs of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> do not resolve, by design.</p>
 </div>
 </td>
 </tr>
@@ -4263,10 +4263,10 @@ In the development phase of the BDR, the BDR Gateway is online at <a href="http:
 </table>
 </div>
 <div class="paragraph">
-<p>The BDR Gateway&#8217;s status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI <code>http://linked.data.gov.au/dataset/bdr/message/1234</code> may be requested like so:</p>
+<p>The BDR Gateway&#8217;s status endpoint accepts just one parameter, "iri", which is the IRI of the item you are requesting the status of. For example, the status of a message with IRI <code>https://linked.data.gov.au/dataset/bdr/message/1234</code> may be requested like so:</p>
 </div>
 <div class="paragraph">
-<p><a href="http://bdrgateway.surroundaustralia.com/status?iri=http://linked.data.gov.au/dataset/bdr/message/1234" class="bare">http://bdrgateway.surroundaustralia.com/status?iri=http://linked.data.gov.au/dataset/bdr/message/1234</a></p>
+<p><a href="http://bdrgateway.surroundaustralia.com/status?iri=https://linked.data.gov.au/dataset/bdr/message/1234" class="bare">http://bdrgateway.surroundaustralia.com/status?iri=https://linked.data.gov.au/dataset/bdr/message/1234</a></p>
 </div>
 <div class="paragraph">
 <p>The responses that the BDR Gateway will provide are RDF messages based on the statuses in the next section.</p>
@@ -4386,7 +4386,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/submitted</code>. This may be contracted to <code>bdrm:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
 </div>
 <div class="paragraph">
-<p>Following are a list of per-status RDF examples, all of which use an IRI of <code>http://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>http://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
+<p>Following are a list of per-status RDF examples, all of which use an IRI of <code>https://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>https://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
 </div>
 <div class="paragraph">
 <p><code>submitted</code>:</p>
@@ -4540,7 +4540,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-02 04:44:39 UTC
+Last updated 2022-02-02 04:50:44 UTC
 </div>
 </div>
 </body>
