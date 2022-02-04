@@ -4323,6 +4323,14 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values - object IRIs and literal data values - are valid according to the value-based validation tests within the BDR</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>notexpanded</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message content has not been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to <code>CreateMessage</code> messages</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>expanded</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message content has been expanded upon successfully by the system and ABIS reasoning rules. This status is only relevant to <code>CreateMessage</code> messages</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>staged</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The message is stored in the Staging BDR environment ready for synchronisation to the Live environment</p></td>
 </tr>
@@ -4454,6 +4462,44 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 </div>
 <div class="paragraph">
+<p><code>notexpanded</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:notexpanded ;
+    bdrm:statusMessage "The message could not be expanded " ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The message <code>&lt;message/1234&gt;</code> has failed successful expansion following system and ABIS rules.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+At the time of writing, "system and ABIS rules" that expand data are not defined, so references to particular rules can&#8217;t be made. When rules are articulated, they will be idenified by IRI so errors in expansion will be referenced similar to the <code>badvalues</code> errors.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>expanded</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
+    a bdrm:CreateMessage ;
+    bdrm:absorbtionStatus bdrm:expanded ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p><code>notstaged</code>:</p>
 </div>
 <div class="listingblock">
@@ -4540,7 +4586,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-02 23:24:47 UTC
+Last updated 2022-02-04 23:41:54 UTC
 </div>
 </div>
 </body>
