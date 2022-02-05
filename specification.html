@@ -670,6 +670,11 @@ See that profile&#8217;s main document for details of the other profile parts an
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Requirements namespace</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>rul:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/rul/" class="bare">https://linked.data.gov.au/def/abis/rul/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Rules namespace</strong></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>cc:</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Conformance Class namespace</strong></p></td>
@@ -718,6 +723,11 @@ See that profile&#8217;s main document for details of the other profile parts an
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2004/02/skos/core#" class="bare">http://www.w3.org/2004/02/skos/core#</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System (SKOS) ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/bdr-msg/status/" class="bare">https://linked.data.gov.au/def/bdr-msg/status/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BDR Messages Status Vocabulary**</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tern:</code></p></td>
@@ -4308,7 +4318,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>duplicate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an <code>owl:sameAs</code> property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message has failed duplication analysis (i.e. it is considered a duplicate). The messsage it is considered to duplicate will be indacated with an <code>bdrm:duplicates</code> property</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nonduplicate</code></p></td>
@@ -4316,7 +4326,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>badvalues</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix <code>dbrm:doesNotConformTo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message&#8217;s values are not considered valid according to the value-based validation tests within the BDR. The test(s) that have raised errors will be indicated with the prefix <code>bdrm:failed</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>goodvalues</code></p></td>
@@ -4395,7 +4405,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <p>Each status is formally defined within the <em>Message Statuses</em> vocabulary which is part of the <em>BDR Messages Ontology</em> used to characterise messages within the BDR. The vocabulary&#8217;s concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs.</p>
 </div>
 <div class="paragraph">
-<p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/submitted</code>. This may be contracted to <code>bdrm:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
+<p>Message status IRIs are made with the BDR Messages Ontology Namespace, <code>https://linked.data.gov.au/def/bdr-msg/</code> with an assitional <code>status</code> path segment, and the IDs from the first column in table, thus the status <code>submitted&#8217;s full IRI is `https://linked.data.gov.au/def/bdr-msg/status/submitted</code>. This may be contracted to <code>status:submitted</code>, using the BDR Messages Ontology Namespace&#8217;s prefix, as given in <a href="#_namespaces">Namespaces</a>.</p>
 </div>
 <div class="paragraph">
 <p>Following are a list of per-status RDF examples, all of which use an IRI of <code>https://linked.data.gov.au/dataset/bdr/message/1234</code> for a <code>CreateMessage</code> type of message. The IRI base of <code>https://linked.data.gov.au/dataset/bdr/</code> is used, thus the IRI for the message is shown as <code>&lt;message/1234&gt;</code>.</p>
@@ -4407,7 +4417,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:submitted ;
+    bdrm:absorbtionStatus status:submitted ;
 .</code></pre>
 </div>
 </div>
@@ -4418,8 +4428,8 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:duplicate ;
-    owl:sameAs &lt;message/54321&gt; ;
+    bdrm:absorbtionStatus status:duplicate ;
+    bdrm:duplicates &lt;message/54321&gt; ;
 .</code></pre>
 </div>
 </div>
@@ -4433,7 +4443,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notduplicate ;
+    bdrm:absorbtionStatus status:notduplicate ;
 .</code></pre>
 </div>
 </div>
@@ -4444,15 +4454,27 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:badvalues ;
-    dbrm:doesNotConformTo
+    bdrm:absorbtionStatus status:badvalues ;
+    bdrm:failed
         req:ValuesReqK ,
-        req:ValuesReqM ;
+        req:ValuesReqL ;
 .</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The message <code>&lt;message/1234&gt;</code> has failed message values tests for Requirements <code>req:ValuesReqK</code> &amp; <code>req:ValuesReqM</code>.</p>
+<p>The message <code>&lt;message/1234&gt;</code> has failed message values tests for Requirements <code>req:ValuesReqK</code> &amp; <code>req:ValuesReqL</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+At the time of writing, value tests for BDR messages haven&#8217;t been defined so dummy test IRIs of <code>req:ValuesReqK</code> &amp; <code>req:ValuesReqL</code> are used here. When defined, real IRIs will be referenced.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><code>goodvalues</code>:</p>
@@ -4461,7 +4483,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:goodvalues ;
+    bdrm:absorbtionStatus status:goodvalues ;
 .</code></pre>
 </div>
 </div>
@@ -4472,8 +4494,10 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notexpanded ;
-    bdrm:statusMessage "The message could not be expanded " ;
+    bdrm:absorbtionStatus status:notexpanded ;
+    bdrm:failed
+        rul:ExpRuleM ,
+        rul:ExpRuleN ;
 .</code></pre>
 </div>
 </div>
@@ -4487,7 +4511,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="title">Note</div>
 </td>
 <td class="content">
-At the time of writing, "system and ABIS rules" that expand data are not defined, so references to particular rules can&#8217;t be made. When rules are articulated, they will be idenified by IRI so errors in expansion will be referenced similar to the <code>badvalues</code> errors.
+At the time of writing, expansion rules for BDR messages haven&#8217;t been defined so dummy test IRIs of <code>rul:ExpRuleM</code> &amp; <code>rul:ExpRuleM</code> are used here. When defined, real IRIs will be referenced.
 </td>
 </tr>
 </table>
@@ -4499,7 +4523,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:expanded ;
+    bdrm:absorbtionStatus status:expanded ;
 .</code></pre>
 </div>
 </div>
@@ -4510,7 +4534,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notstaged ;
+    bdrm:absorbtionStatus status:notstaged ;
     bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
 .</code></pre>
 </div>
@@ -4525,7 +4549,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:staged ;</code></pre>
+    bdrm:absorbtionStatus status:staged ;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4535,8 +4559,8 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:notlive ;
-    bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
+    bdrm:absorbtionStatus status:notlive ;
+    bdrm:statusMessage "The BDR Live environment is offline due to a system fault" ;
 .</code></pre>
 </div>
 </div>
@@ -4550,7 +4574,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus bdrm:live ;</code></pre>
+    bdrm:absorbtionStatus status:live ;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4560,7 +4584,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus bdrm:notlive ;
+    bdrm:absorbtionStatus status:notlive ;
     bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
 .</code></pre>
 </div>
@@ -4572,7 +4596,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus bdrm:badvalues ;
+    bdrm:absorbtionStatus status:badvalues ;
     bdrm:statusMessage "You do not have permission to delete that resource"
 .</code></pre>
 </div>
@@ -4590,7 +4614,7 @@ At the time of writing, "system and ABIS rules" that expand data are not defined
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-04 23:51:33 UTC
+Last updated 2022-02-05 00:57:39 UTC
 </div>
 </div>
 </body>
