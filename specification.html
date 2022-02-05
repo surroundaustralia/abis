@@ -4427,7 +4427,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:submitted ;
+    bdrm:absorptionStatus status:submitted ;
 .</code></pre>
 </div>
 </div>
@@ -4438,7 +4438,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:duplicate ;
+    bdrm:absorptionStatus status:duplicate ;
     bdrm:duplicates &lt;message/54321&gt; ;
 .</code></pre>
 </div>
@@ -4453,7 +4453,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notduplicate ;
+    bdrm:absorptionStatus status:notduplicate ;
 .</code></pre>
 </div>
 </div>
@@ -4464,7 +4464,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:badvalues ;
+    bdrm:absorptionStatus status:badvalues ;
     bdrm:failed
         req:ValuesReqK ,
         req:ValuesReqL ;
@@ -4493,7 +4493,7 @@ At the time of writing, value tests for BDR messages haven&#8217;t been defined 
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:goodvalues ;
+    bdrm:absorptionStatus status:goodvalues ;
 .</code></pre>
 </div>
 </div>
@@ -4504,7 +4504,7 @@ At the time of writing, value tests for BDR messages haven&#8217;t been defined 
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notexpanded ;
+    bdrm:absorptionStatus status:notexpanded ;
     bdrm:failed
         rul:ExpRuleM ,
         rul:ExpRuleN ;
@@ -4533,7 +4533,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:expanded ;
+    bdrm:absorptionStatus status:expanded ;
 .</code></pre>
 </div>
 </div>
@@ -4544,7 +4544,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notstaged ;
+    bdrm:absorptionStatus status:notstaged ;
     bdrm:statusMessage "The BDR Staging environment is offline due to routine maintenance" ;
 .</code></pre>
 </div>
@@ -4559,7 +4559,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:staged ;</code></pre>
+    bdrm:absorptionStatus status:staged ;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4569,7 +4569,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:notlive ;
+    bdrm:absorptionStatus status:notlive ;
     bdrm:statusMessage "The BDR Live environment is offline due to a system fault" ;
 .</code></pre>
 </div>
@@ -4584,7 +4584,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/1234&gt;
     a bdrm:CreateMessage ;
-    bdrm:absorbtionStatus status:live ;</code></pre>
+    bdrm:absorptionStatus status:live ;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4594,7 +4594,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus status:notlive ;
+    bdrm:absorptionStatus status:notlive ;
     bdrm:statusMessage "The BDR Live environment is offline due to a fault" ;
 .</code></pre>
 </div>
@@ -4606,7 +4606,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;message/5678&gt;
     a bdrm:DeleteMessage ;
-    bdrm:absorbtionStatus status:badvalues ;
+    bdrm:absorptionStatus status:badvalues ;
     bdrm:statusMessage "You do not have permission to delete that resource"
 .</code></pre>
 </div>
@@ -4624,7 +4624,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-05 02:40:20 UTC
+Last updated 2022-02-05 02:43:50 UTC
 </div>
 </div>
 </body>
