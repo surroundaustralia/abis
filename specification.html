@@ -453,13 +453,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_introduction">3. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_identifier">3.1. Identifier</a></li>
-<li><a href="#_labeled">3.2. Labeled</a></li>
-<li><a href="#_definition">3.3. Definition</a></li>
-<li><a href="#_conformance_classes_list">3.4. Conformance Classes list</a></li>
-<li><a href="#_contains_source_notes">3.5. Contains source notes</a></li>
-<li><a href="#_related_validators">3.6. Related validators</a></li>
-<li><a href="#_canonical_examples">3.7. Canonical examples</a></li>
+<li><a href="#_requirement_and_conformance_class_modelling">3.1. Requirement and Conformance Class modelling</a></li>
 </ul>
 </li>
 <li><a href="#_conformance_classes">4. Conformance Classes</a>
@@ -493,7 +487,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_references">8. References</a></li>
-<li><a href="#_annex_a_bdr_message_interactions">Annex A: BDR Message Interactions</a>
+<li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
+<ul class="sectlevel2">
+<li><a href="#_ontologies">Ontologies</a></li>
+<li><a href="#_vocabularies">Vocabularies</a></li>
+<li><a href="#_background_ontologies">Background Ontologies</a></li>
+</ul>
+</li>
+<li><a href="#_annex_b_bdr_message_interactions">Annex B: BDR Message Interactions</a>
 <ul class="sectlevel2">
 <li><a href="#_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</a></li>
 <li><a href="#_a_2_following_message_absorbtion_progress">A.2 Following message absorbtion progress</a></li>
@@ -546,7 +547,7 @@ DRAFT, incomplete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-11-20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-28</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
@@ -641,6 +642,9 @@ See that profile&#8217;s main document for details of the other profile parts an
 </div>
 <div class="paragraph">
 <p>The formal and linked listing of this Standards&#8217;s parts is found in its <em>Profile Declaration</em> online at <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the "technical" parts, this Specification describes the conceptual parts of ABIS, in particular, the domain model and other non-domain models.</p>
 </div>
 </div>
 <div class="sect2">
@@ -768,7 +772,15 @@ See that profile&#8217;s main document for details of the other profile parts an
 <h2 id="_introduction">3. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document is a list of <em>requirements</em> for data to meet in order to conform to the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard</a>. Each <em>requirement</em> is defined with a table of values like this:</p>
+<p>This document contains general description of the <a href="https://linked.data.gov.au/def/abis">Australian Biodiversity Information Standard (ABIS)</a> and importantly a list of <em>requirements</em> and groupings of requirements, <em>Conformance Classes</em>. Data must meet all the <em>requirements</em> in <em>conformance classes</em> to claim conformance to that <em>conformance class'</em> part of the ABIS.</p>
+</div>
+<div class="paragraph">
+<p>This document also lists all the parts of the ABIS which are its various ontologies, vocabularies and others that these depend on. These parts are listed in <a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_requirement_and_conformance_class_modelling">3.1. Requirement and Conformance Class modelling</h3>
+<div class="paragraph">
+<p>Each <em>requirement</em> is defined with a table of values like this:</p>
 </div>
 <table class="tableblock frame-none grid-none stripes-even" style="width: 25%;">
 <colgroup>
@@ -866,8 +878,8 @@ See that profile&#8217;s main document for details of the other profile parts an
 <div class="paragraph">
 <p>The following subsections define properties of the <em>requirements</em> in detail.</p>
 </div>
-<div class="sect2">
-<h3 id="_identifier">3.1. Identifier</h3>
+<div class="sect3">
+<h4 id="_identifier">3.1.1. Identifier</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is identified with a unique identifier of the form <code>req:X</code>, where <code>req:</code> is a prefix for the IRI namespace <code>&lt;https://linked.data.gov.au/def/abis/req/&gt;</code> and <code>X</code> is a number, the number of the <em>requirement</em>.</p>
 </div>
@@ -878,14 +890,14 @@ See that profile&#8217;s main document for details of the other profile parts an
 <p>An IRI is an <a href="https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">Internationalized Resource Identifier</a> which is a globally unique web address created within a managed namespace that resolves to the element it identifies</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_labeled">3.2. Labeled</h3>
+<div class="sect3">
+<h4 id="_labeled">3.1.2. Labeled</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is named with a short form of its definition, to assist with human referencing.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_definition">3.3. Definition</h3>
+<div class="sect3">
+<h4 id="_definition">3.1.3. Definition</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is defined in human-readable terms but with references to data elements modelled according to ontologies defined using the <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a> since the <em>target models</em> of the ABIS are themselves OWL Ontologies.</p>
 </div>
@@ -906,8 +918,8 @@ if there are differences between derivatives of this specification, including th
 </blockquote>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_conformance_classes_list">3.4. Conformance Classes list</h3>
+<div class="sect3">
+<h4 id="_conformance_classes_list">3.1.4. Conformance Classes list</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> is categorised within one or more "Conformance Classes" which are defined bundles of requrirements. Within the ABIS, the Conformance Classes form modules which data may conform to individually.</p>
 </div>
@@ -915,14 +927,14 @@ if there are differences between derivatives of this specification, including th
 <p>Each <em>requirement</em> needs to indicate its Conformance Classes by linking to them.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_contains_source_notes">3.5. Contains source notes</h3>
+<div class="sect3">
+<h4 id="_contains_source_notes">3.1.5. Contains source notes</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> contains source notes  what motivated the <em>requirement</em>'s definition, including references to source documents or other ABIS artifacts, such as ontologies.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_related_validators">3.6. Related validators</h3>
+<div class="sect3">
+<h4 id="_related_validators">3.1.6. Related validators</h4>
 <div class="paragraph">
 <p>Each <em>requirement</em> contains references to individual, identified, data validation <em>shapes</em> defined in the ABIS Profile&#8217;s <em>validator</em> used to validate <a href="https://www.w3.org/RDF/">Resource Description Framework (RDF)</a> data - the only form of data allowed to be used for ABIS data exchange.</p>
 </div>
@@ -946,13 +958,14 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </blockquote>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_canonical_examples">3.7. Canonical examples</h3>
+<div class="sect3">
+<h4 id="_canonical_examples">3.1.7. Canonical examples</h4>
 <div class="paragraph">
 <p>For each <em>requirement</em>, references are given to at least two <em>canonical examples</em> of RDF data that do (positive example) and don&#8217;t (negative example) pass validation using the validators related to the <em>requirement</em>.</p>
 </div>
 <div class="paragraph">
 <p>The content of the <em>canonical examples</em>, i.e. the examples' data, is contianed in the ABIS' <em>Canonical Examples</em> resource.</p>
+</div>
 </div>
 </div>
 </div>
@@ -4229,8 +4242,65 @@ If an instance of <code>term:Sample</code> is a <code>term:MaterialSample</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_a_bdr_message_interactions">Annex A: BDR Message Interactions</h2>
+<h2 id="_annex_a_abis_parts">Annex A: ABIS Parts</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This Annex is normative.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><em>Here will soon be the authorititive listing of the parts - onlologies &amp; vocabs - of ABIS.</em></p>
+</div>
+<div class="sect2">
+<h3 id="_ontologies">Ontologies</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>TERN Ontology</p>
+</li>
+<li>
+<p>BDR Messaging Ontology</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vocabularies">Vocabularies</h3>
+<div class="paragraph">
+<p>These vocabularies are used by the ontologies listed above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_background_ontologies">Background Ontologies</h3>
+<div class="paragraph">
+<p>These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_b_bdr_message_interactions">Annex B: BDR Message Interactions</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This Annex is normative.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_messages">BDR Messages</a>.</p>
 </div>
@@ -4624,7 +4694,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-05 02:43:50 UTC
+Last updated 2022-02-28 05:32:04 UTC
 </div>
 </div>
 </body>
