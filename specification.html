@@ -460,7 +460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_index">4.1. Conformance Class Index</a></li>
 <li><a href="#_domain_model_conformance_class">4.2. Domain Model Conformance Class</a></li>
-<li><a href="#_bdr_messages_conformance_class">4.3. BDR Messages Conformance Class</a></li>
+<li><a href="#_bdr_system_conformance_class">4.3. BDR System Conformance Class</a></li>
 </ul>
 </li>
 <li><a href="#_requirements">5. Requirements</a>
@@ -481,7 +481,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_examples">7. Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_bdr_messages">7.1. BDR Messages</a></li>
+<li><a href="#_bdr_sytem">7.1. BDR Sytem</a></li>
 <li><a href="#_domain_model">7.2. Domain Model</a></li>
 <li><a href="#_sampling_position">7.3. Sampling Position</a></li>
 </ul>
@@ -489,7 +489,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_references">8. References</a></li>
 <li><a href="#_annex_a_abis_parts">Annex A: ABIS Parts</a>
 <ul class="sectlevel2">
-<li><a href="#_ontologies">Ontologies</a></li>
+<li><a href="#_domain_model_2">Domain Model</a></li>
+<li><a href="#_bdr_system">BDR System</a></li>
 <li><a href="#_vocabularies">Vocabularies</a></li>
 <li><a href="#_background_ontologies">Background Ontologies</a></li>
 </ul>
@@ -1026,7 +1027,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 </table>
 </div>
 <div class="sect2">
-<h3 id="_bdr_messages_conformance_class">4.3. BDR Messages Conformance Class</h3>
+<h3 id="_bdr_system_conformance_class">4.3. BDR System Conformance Class</h3>
 <table class="tableblock frame-none grid-all stripes-even" style="width: 75%;">
 <colgroup>
 <col style="width: 50%;">
@@ -3595,7 +3596,7 @@ the validating <em>shapes</em> are not 1:1 with these <em>requirements</em> and 
 <h2 id="_examples">7. Examples</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bdr_messages">7.1. BDR Messages</h3>
+<h3 id="_bdr_sytem">7.1. BDR Sytem</h3>
 <div class="paragraph">
 <p>This section contains examples of the messages that may be sent to the Biodiversity Data Repository (BDR) and potentially other ABIS-conformant systems to alter their content.</p>
 </div>
@@ -4257,33 +4258,34 @@ This Annex is normative.
 </table>
 </div>
 <div class="paragraph">
-<p><em>Here will soon be the authorititive listing of the parts - onlologies &amp; vocabs - of ABIS.</em></p>
+<p>This annex lists the major information elements of the ABIS specification: the domain and background ontologies, their supporting vocabularies and other elements approved for use by the ABIS Working Group.</p>
 </div>
 <div class="sect2">
-<h3 id="_ontologies">Ontologies</h3>
+<h3 id="_domain_model_2">Domain Model</h3>
+<div class="paragraph">
+<p>The ABIS specification&#8217;s domain model is based on the TERN Ontology and includes it, the vocabularies required/approved for use with it and its model dependencies (background ontologies). There are also a series of "mapping" ontologies that relate ABIS data to other models.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>TERN Ontology</p>
-</li>
+<p>Model</p>
+<div class="ulist">
+<ul>
 <li>
-<p>BDR Messaging Ontology</p>
+<p><a href="https://linkeddata.tern.org.au/viewers/tern-ontology">TERN Ontology</a></p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_vocabularies">Vocabularies</h3>
-<div class="paragraph">
-<p>These vocabularies are used by the ontologies listed above.</p>
-</div>
+</li>
+<li>
+<p>Vocabularies</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://linkeddata.tern.org.au/viewer/tern/id/http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e">Parameter Types</a></p>
+<p><a href="http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e">Parameter Types</a></p>
 </li>
 <li>
-<p><a href="https://linkeddata.tern.org.au/viewer/tern/id/http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d">Feature Types</a></p>
+<p><a href="http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d">Feature Types</a></p>
 </li>
 <li>
 <p><a href="http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8">Instrument Types</a></p>
@@ -4293,39 +4295,82 @@ This Annex is normative.
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_background_ontologies">Background Ontologies</h3>
-<div class="paragraph">
-<p>These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.</p>
-</div>
+</li>
+<li>
+<p>Background Ontologies</p>
 <div class="ulist">
 <ul>
-<li>
-<p>Somantic Sensor Network Ontology (SSN)</p>
-</li>
 <li>
 <p>Sensor, Observation, Sample, and Actuator (SOSA) Ontology</p>
 </li>
 <li>
+<p>Darwin Core (DWC)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Mapping Ontologies</p>
+<div class="ulist">
+<ul>
+<li>
 <p>Parameter Usage Vocabulary Ontology (PUV)</p>
 </li>
+<li>
+<p>I-ADOPT Framework Ontology (I-ADOPT)</p>
+</li>
+<li>
+<p>Location Integration Capability Ontology (LOC)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bdr_system">BDR System</h3>
+<div class="paragraph">
+<p>The BDR system has model requirements for information management and use that extend beyond the ABIS Domain Model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Models</p>
+<div class="ulist">
+<ul>
+<li>
+<p>BDR Messaging Ontology</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Background Ontologies</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Profiles Vocabulary (PROF)</p>
 </li>
 <li>
 <p>Provenance, Authoring, and Versioning Ontology (PAV)</p>
 </li>
-<li>
-<p>Location Integration Capability Ontology (LOC)</p>
-</li>
-<li>
-<p>I-ADOPT Framework Ontology (I-ADOPT)</p>
-</li>
-<li>
-<p>Darwin Core (DWC)</p>
+</ul>
+</div>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vocabularies">Vocabularies</h3>
+<div class="paragraph">
+<p>These vocabularies are used by the ontologies listed above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_background_ontologies">Background Ontologies</h3>
+<div class="paragraph">
+<p>These ontologies are relied on (imported by or used by) the ontologies and vocabularies above.</p>
 </div>
 </div>
 </div>
@@ -4346,7 +4391,7 @@ This Annex is normative.
 </table>
 </div>
 <div class="paragraph">
-<p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_messages">BDR Messages</a>.</p>
+<p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_system">BDR System</a>.</p>
 </div>
 <div class="paragraph">
 <p>All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at <a href="https://gateway.bdr.gov.au" class="bare">https://gateway.bdr.gov.au</a>.</p>
@@ -4738,7 +4783,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-02 02:01:39 UTC
+Last updated 2022-03-03 02:19:12 UTC
 </div>
 </div>
 </body>
