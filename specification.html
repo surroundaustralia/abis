@@ -495,10 +495,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_background_ontologies">Background Ontologies</a></li>
 </ul>
 </li>
-<li><a href="#_annex_b_bdr_message_interactions">Annex B: BDR Message Interactions</a>
+<li><a href="#_annex_b_biodiversity_data_repository">Annex B: Biodiversity Data Repository</a>
 <ul class="sectlevel2">
-<li><a href="#_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</a></li>
-<li><a href="#_a_2_following_message_absorbtion_progress">A.2 Following message absorbtion progress</a></li>
+<li><a href="#_a_1_bdr_description">A.1 BDR Description</a></li>
+<li><a href="#_a_2_sending_messages_to_the_bdr">A.2 Sending messages to the BDR</a></li>
+<li><a href="#_a_3_following_message_absorbtion_progress">A.3 Following message absorbtion progress</a></li>
 </ul>
 </li>
 </ul>
@@ -4379,16 +4380,28 @@ This Annex is normative.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_b_bdr_message_interactions">Annex B: BDR Message Interactions</h2>
+<h2 id="_annex_b_biodiversity_data_repository">Annex B: Biodiversity Data Repository</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This Annex contains information about the Biodiversity Data Repository (BDR) that is a major implementing system of the ABIS.</p>
+</div>
+<div class="paragraph">
+<p>The BDR is visible online at <a href="https://bdr.gov.au" class="bare">https://bdr.gov.au</a></p>
+</div>
+<div class="sect2">
+<h3 id="_a_1_bdr_description">A.1 BDR Description</h3>
+<div class="paragraph">
+<p>The BDR&#8217;s data is predicated on ABIS - all data within the BDR is ABIS-conformant - however the BDR also contains extensions to ABIS to cater for system-specific needs. For example, the BDR requires that ABIS information sent to it for storage be packaged in <em>BDR Messages</em> and the BDR defines a <em>BDR Messages Ontology</em> that contains the data model for those messages. The BDR also employs some backgrounding ontologies for enhanced data versioning such as <em>Provenance Annotation &amp; Versioning</em></p>
+</div>
 <div class="paragraph">
 <p>The format and expected content of messages sent to the Biodiveristy Data Repository (BDR) are defined in <a href="#_bdr_system">BDR System</a>.</p>
 </div>
 <div class="paragraph">
 <p>All interactions with the BDR around messages take place via the BDR Gateway, which is the API provided for this purpose. It is online at <a href="https://gateway.bdr.gov.au" class="bare">https://gateway.bdr.gov.au</a>.</p>
 </div>
+</div>
 <div class="sect2">
-<h3 id="_a_1_sending_messages_to_the_bdr">A.1 Sending messages to the BDR</h3>
+<h3 id="_a_2_sending_messages_to_the_bdr">A.2 Sending messages to the BDR</h3>
 <div class="paragraph">
 <p>Messages sent to the BDR are sent via HTTP POST to the BDR Gateway, which is a web API. It validates messages using the SHACL Shapes associated with this specification and, if valid, a message&#8217;s placeholder IRI is replaced with a persistent identifier of the form <code>https://linked.data.gov.au/dataset/bdr/message/&lt;MESSAGE-ID&gt;</code> where the <code>&lt;MESSAGE-ID&gt;</code> is assigned by the BDR.</p>
 </div>
@@ -4414,9 +4427,9 @@ This Annex is normative.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_2_following_message_absorbtion_progress">A.2 Following message absorbtion progress</h3>
+<h3 id="_a_3_following_message_absorbtion_progress">A.3 Following message absorbtion progress</h3>
 <div class="sect3">
-<h4 id="_a_2_1_bdr_gateway_status_endpoint">A.2.1 BDR Gateway status endpoint</h4>
+<h4 id="_a_3_1_bdr_gateway_status_endpoint">A.3.1 BDR Gateway status endpoint</h4>
 <div class="paragraph">
 <p>Using the persistent identifier of a message, you can track the status of that message regarding it&#8217;s absorbtion into the BDR by using the BDR Gateway&#8217;s message status endpoint, <code>/status</code>, which is online at <code>https://gateway.bdr.gov.au/status</code>.</p>
 </div>
@@ -4443,7 +4456,7 @@ In the development phase of the BDR, the BDR Gateway is online at <a href="http:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_a_2_2_message_statuses">A.2.2 Message statuses</h4>
+<h4 id="_a_3_2_message_statuses">A.3.2 Message statuses</h4>
 <div class="paragraph">
 <p>The table below indicates the statuses of messages sent to the BDR.</p>
 </div>
@@ -4523,7 +4536,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 </div>
 <div class="sect3">
-<h4 id="_a_2_3_message_status_state_diagram">A.2.3 Message status state diagram</h4>
+<h4 id="_a_3_3_message_status_state_diagram">A.3.3 Message status state diagram</h4>
 <div class="paragraph">
 <p>The following figure shows the state diagram used to indicate allowed message transitions between statues.</p>
 </div>
@@ -4560,7 +4573,7 @@ Messages submitted to the BDR Gateway only have their status tracked <em>after</
 </div>
 </div>
 <div class="sect3">
-<h4 id="_a_2_4_message_status_rdf">A.2.4 Message status RDF</h4>
+<h4 id="_a_3_4_message_status_rdf">A.3.4 Message status RDF</h4>
 <div class="paragraph">
 <p>Each status is formally defined within the <em>Message Statuses</em> vocabulary which is part of the <em>BDR Messages Ontology</em> used to characterise messages within the BDR. The vocabulary&#8217;s concepts correspond to entires in the table above and identifiers for each are, as all things in the BDR, IRIs.</p>
 </div>
@@ -4774,7 +4787,7 @@ At the time of writing, expansion rules for BDR messages haven&#8217;t been defi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-29 23:19:45 UTC
+Last updated 2022-03-31 07:01:57 UTC
 </div>
 </div>
 </body>
