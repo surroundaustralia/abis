@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>ABIS Definition</title>
+<title>ABIS Overview</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,25 +438,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>ABIS Definition</h1>
+<h1>ABIS Overview</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_metadata">1. Metadata</a></li>
-<li><a href="#_preamble">2. Preamble</a>
-<ul class="sectlevel2">
-<li><a href="#_abstract">2.1. Abstract</a></li>
-<li><a href="#_normative_status">2.2. Normative Status</a></li>
-<li><a href="#_namespaces">2.3. Namespaces</a></li>
-</ul>
-</li>
-<li><a href="#_introduction">3. Introduction</a>
-<ul class="sectlevel2">
-<li><a href="#_profiles_vocabulary_overview">3.1. Profiles Vocabulary overview</a></li>
-<li><a href="#_abis_parts">3.2. ABIS Parts</a></li>
-</ul>
-</li>
-<li><a href="#_references">4. References</a></li>
+<li><a href="#_what_is_abis">1. What is ABIS?</a></li>
+<li><a href="#_how_do_i_use_it">2. How do I use it?</a></li>
+<li><a href="#_who_ownes_it">3. Who ownes it?</a></li>
+<li><a href="#_how_do_i_improve_it">4. How do I improve it?</a></li>
 </ul>
 </div>
 </div>
@@ -475,320 +464,33 @@ DRAFT, incomplete
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_metadata">1. Metadata</h2>
-<div class="sectionbody">
-<table class="tableblock frame-none grid-none stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 83.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IRI</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/abis" class="bare">https://linked.data.gov.au/def/abis</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Australian Biodiversity Information Standard</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is the Standard Definition of the Australian Biodiversity Information Standard (ABIS). It formally defines the parts of the standard.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2021-12-13</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-04</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/surround">SURROUND Australia Pty Ltd</a>, <a href="https://www.gaiaresources.com.au/">Gaia Resources</a>, <a href="https://www.tern.org.au">TERN</a> and the <a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>License</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Further information</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See the core repository that contains all the resources used to create ABIS: <a href="https://github.com/surroundaustralia/abis" class="bare">https://github.com/surroundaustralia/abis</a></p></td>
-</tr>
-</tbody>
-</table>
-<div id="img-rdf" class="imageblock text-center">
-<div class="content">
-<img src="https://surroundaustralia.github.io/abis/img/standard-overview.png" alt="ABIS Overview" width="600" height="400">
-</div>
-<div class="title">Figure 1. Overview of the ABIS and it&#8217;s main parts.</div>
+<div class="paragraph">
+<p>This is a short overview of the Australian Biodiversity Information Standard (ABIS). It is only one of many parts of the ABIS and all the parts are defined in the <a href="https://surroundaustralia.github.io/abis/standard.html:">ABIS Standard Definition</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_preamble">2. Preamble</h2>
+<h2 id="_what_is_abis">1. What is ABIS?</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_abstract">2.1. Abstract</h3>
-<div class="paragraph">
-<p>This is the Standard Definition of the Australian Biodiversity Information Standard (ABIS). It formally defines the parts of the standard.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_normative_status">2.2. Normative Status</h3>
-<div class="paragraph">
-<p>This Standard Definition is normative for the structure of the ABIS and take precedence over other expressions of the Standard&#8217;s structure.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_namespaces">2.3. Namespaces</h3>
-<div class="paragraph">
-<p>This document references namespaces for machine-readable objects. All referenced namespaces are defined in this table.</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-even" style="width: 75%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Prefix</th>
-<th class="tableblock halign-left valign-top">Namespace</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>abis:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/" class="bare">https://linked.data.gov.au/def/abis/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Standard Definition namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>req:</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/abis/req/" class="bare">https://linked.data.gov.au/def/abis/req/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ABIS Requirements namespace</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms vocabulary namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://example.com/" class="bare">http://example.com/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2002/07/owl#" class="bare">http://www.w3.org/2002/07/owl#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2000/01/rdf-schema#" class="bare">http://www.w3.org/2000/01/rdf-schema#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sosa:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/sosa/" class="bare">http://www.w3.org/ns/sosa/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor, Observation, Sample, and Actuator ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2004/02/skos/core#" class="bare">http://www.w3.org/2004/02/skos/core#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System (SKOS) ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tern:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/sosa/" class="bare">http://www.w3.org/ns/sosa/</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>time:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2006/time#" class="bare">http://www.w3.org/2006/time#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Time Ontology in OWL namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://rdfs.org/ns/void#" class="bare">http://rdfs.org/ns/void#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vocabulary of Interlinked Data (VoID) ontology namespace</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2001/XMLSchema#" class="bare">http://www.w3.org/2001/XMLSchema#</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Definitions ontology namespace</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introduction">3. Introduction</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This Standard is a multi-part publication that consists of human-readable documents, such as this one, the <em>Overview</em> and <em>Specification</em>, and machine-readable artifacts, such as data validators.</p>
-</div>
-<div class="paragraph">
-<p>This Standard and its parts are defined here in human-readable form and in machine-readable form according to the <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a>.</p>
-</div>
-<div class="paragraph">
-<p>The following sections describe the parts and how they relate to each other and other standards using terminology from the Profiles Vocabulary.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The document that describes the business rules and other requirements of ABIS is the <a href="https://linked.data.gov.au/def/abis/spec"><em>Specification</em></a>, not this document.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_profiles_vocabulary_overview">3.1. Profiles Vocabulary overview</h3>
-<div class="paragraph">
-<p>The <em>Profiles Vocabulary</em> <a href="#PROF">[PROF]</a> is a <a href="https://www.w3.org:">World Wide Web Consortium</a> standard for the formal description of Standards, their parts, and how they relate to other Standards.</p>
-</div>
-<div class="paragraph">
-<p>The use of the word 'profile' here is due to the way Standards reuse other Standards: if one extends another and remains faithful to its rules, it can be said to <em>profile</em> it.</p>
-</div>
-<div class="paragraph">
-<p>Standards described using PROF:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>provide a standard definition</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>this is the overarching description of the standard which is independent of any of the particular resources within the standard</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>describe multiple <em>resources</em> within the Standard</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>each part of a Standard is described using roles, formats, online or other locations and other metadata</p>
-</li>
-<li>
-<p>roles are defined formally by a roles vocabulary within PROF</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>indicate what they are profiles of</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>if a Standard extends/constrains another Standard, and many do, this is indicated in a formal way</p>
-</li>
-<li>
-<p>data that conforms to a Standard extending another must also conform to all the Standards being extended</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_abis_parts">3.2. ABIS Parts</h3>
-<div class="paragraph">
-<p><a href="#resources-table">Table 1</a> gives a listing of this Standard&#8217;s parts, known as <em>resources</em>, their roles and their persistent identifers which are also web links to them.</p>
-</div>
-<table id="resources-table" class="tableblock frame-none grid-none stripes-even stretch">
-<caption class="title">Table 1. Resources in this Standard</caption>
-<colgroup>
-<col style="width: 18.1818%;">
-<col style="width: 9.0909%;">
-<col style="width: 54.5454%;">
-<col style="width: 18.1819%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Resource</th>
-<th class="tableblock halign-left valign-top">Role</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">PID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Standard Definition</strong></p>
-<p class="tableblock"><em>(this document)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://surroundaustralia.github.io/prof-roles/profile-definition">Profile Definition</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Defines this Standard&#8217;s parts and relations to other Standards</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="https://surroundaustralia.github.io/abis/standard.html">https://linked.data.gov.au/def/abis</a></strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Machine-readable Standard Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/prof-roles/profile-definition">Profile Definition</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines this Standard&#8217;s parts and relations to other Standards in machine-readable form</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/abis/standard.ttl">https://linked.data.gov.au/def/abis.ttl</a></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The machine-redable form of this Standard&#8217;s conceptual <em>profile</em> declaration is provided in the RDF <a href="https://surroundaustralia.github.io/abis/profile.ttl">profile.ttl</a> resource and reproduced here for convenience:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle">@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-@prefix prof: &lt;http://www.w3.org/ns/dx/prof/&gt; .
 
-
-&lt;https://linked.data.gov.au/def/abis&gt;
-    a prof:Profile , dcterms:Standard ;
-    dcterms:title "ABIS Definition" ;
-    dcterms:description "This resource describes the structure and multiple parts of the ABIS as well as the formalisms used in their definitions, in machine-readable form." ;
-    dcterms:created "2021-12-13"^^xsd:date ;
-    dcterms:modified "2021-12-13"^^xsd:date ;
-    # dcterms:issued "0000-00-00"^^xsd:date ;
-    dcterms:creator
-        &lt;https://linked.data.gov.au/org/surround&gt; ,
-        &lt;https://www.gaiaresources.com.au&gt; ,
-        &lt;https://linked.data.gov.au/org/dawe&gt; ;
-    dcterms:publisher &lt;https://linked.data.gov.au/org/dawe&gt; ;
-    dcterms:license &lt;http://purl.org/NET/rdflicense/cc-by4.0&gt; ;
-    dcterms:rights "(c) Commonwealth of Australian (Department of Agriculture, Water and the Environment), 2021" ;
-    prof:isProfileOf
-        &lt;https://www.w3.org/TR/vocab-ssn/&gt; ;
-.</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">4. References</h2>
+<h2 id="_how_do_i_use_it">2. How do I use it?</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
-</li>
-</ul>
+
 </div>
+</div>
+<div class="sect1">
+<h2 id="_who_ownes_it">3. Who ownes it?</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_improve_it">4. How do I improve it?</h2>
+<div class="sectionbody">
+
 </div>
 </div>
 </div>
