@@ -1,3 +1,5 @@
+#### Archived: Please see https://github.com/AusBIGG/abis
+
 # Australian Biodiversity Information Standard
 This repository contains the Australian Biodiversity Information Standard (ABIS). ABIS is made of multiple resources: documents, code files and other resources. Together these present ABIS' definitions, rules and tools for its use.
 
